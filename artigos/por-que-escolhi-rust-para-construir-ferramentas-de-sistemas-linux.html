@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <!-- Custom Branded Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a66c2'/%3E%3Ctext x='16' y='21' font-family='system-ui, -apple-system, sans-serif' font-size='14' font-weight='900' fill='%23ffffff' text-anchor='middle'%3ETL%3C/text%3E%3C/svg%3E">
+  
   <!-- Extreme SEO Core Tags -->
   <title>Por que escolhi Rust para construir ferramentas de sistemas Linux | Thiago Lúcio - Diário Dev</title>
   <meta name="description" content="Minha experiência desenvolvendo o Flux, um gerenciador de arquivos rápido com GTK4, e os benefícios da segurança de memória e concorrência garantidas pelo compilador Rust.">
@@ -150,7 +154,7 @@
     <article class="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-sm" itemscope itemtype="https://schema.org/TechArticle">
       <div class="flex items-center gap-2 mb-4">
         <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-sky-50 text-[#0a66c2] uppercase tracking-wider">Rust / Systems</span>
-        <span class="text-xs text-gray-400 font-semibold">10 de Julho, 2026</span>
+        <span class="text-xs text-gray-600 font-semibold">10 de Julho, 2026</span>
       </div>
       
       <h1 class="text-2xl md:text-3xl font-extrabold text-[#191919] tracking-tight mb-6 leading-tight" itemprop="headline">Por que escolhi Rust para construir ferramentas de sistemas Linux</h1>
@@ -164,20 +168,20 @@
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Foi exatamente por isso que escolhi Rust.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Rust entrega desempenho equivalente ao de C e C++, mas adiciona um sistema de propriedade (ownership) e empréstimos (borrowing) que elimina uma classe inteira de erros em tempo de compilação. Em vez de descobrir um problema de memória depois que o programa está em produção, o compilador simplesmente impede que aquele código seja compilado.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Esse modelo muda completamente a forma de desenvolver software de baixo nível.</p>
-<h3 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">O projeto Flux</h3>
+<h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">O projeto Flux</h2>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">No desenvolvimento do Flux, meu gerenciador de arquivos para Linux escrito em Rust utilizando GTK4 e Relm4, percebi rapidamente como essas garantias fazem diferença.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Enquanto implementava operações de leitura de diretórios, monitoramento do sistema de arquivos e atualização da interface gráfica, pude focar na lógica da aplicação sem a preocupação constante com ponteiros inválidos, use-after-free ou data races.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Isso não significa que Rust elimina toda a complexidade. Existe uma curva de aprendizado considerável, principalmente para compreender o sistema de ownership. Porém, depois que esses conceitos fazem sentido, eles deixam de ser um obstáculo e passam a funcionar como um excelente revisor de código trabalhando em tempo integral.</p>
-<h3 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">O que aprendi com GTK4 e Relm4</h3>
-<h3 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Arquitetura reativa</h3>
+<h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">O que aprendi com GTK4 e Relm4</h2>
+<h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Arquitetura reativa</h2>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">O Relm4 utiliza uma arquitetura baseada em estado que torna o código muito organizado.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">A interface deixa de ser um conjunto de callbacks espalhados e passa a reagir automaticamente às mudanças de estado da aplicação. Para quem já trabalhou com React, Vue ou Elm, a filosofia é bastante familiar.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Essa separação entre estado, mensagens e atualização da interface facilita bastante a manutenção conforme o projeto cresce.</p>
-<h3 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Concorrência sem medo</h3>
+<h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Concorrência sem medo</h2>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Outra característica que me chamou atenção foi a facilidade para paralelizar tarefas.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Operações potencialmente demoradas, como listar diretórios contendo milhares de arquivos, podem ser executadas em threads separadas mantendo a interface responsiva.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">O mais interessante é que o compilador impede diversos tipos de erros de concorrência antes mesmo da aplicação ser executada. Isso reduz drasticamente a chance de encontrar aqueles bugs intermitentes que aparecem apenas em determinadas condições.</p>
-<h3 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Vale a pena aprender Rust?</h3>
+<h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Vale a pena aprender Rust?</h2>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Na minha opinião, sim.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Rust não é a linguagem mais simples para começar. O compilador é exigente e, no início, pode parecer que ele está "brigando" com você o tempo todo.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Depois de algum tempo, porém, fica claro que essa rigidez existe justamente para evitar problemas que, em outras linguagens, poderiam aparecer apenas meses depois em produção.</p>
@@ -189,13 +193,13 @@
         <a href="../index.html" class="text-xs font-bold text-[#0a66c2] hover:text-[#004182] hover:underline flex items-center gap-1.5">
           &larr; Voltar para o início
         </a>
-        <span class="text-[10px] text-gray-400 font-medium">Thiago Lúcio &bull; Diário Dev</span>
+        <span class="text-[10px] text-gray-600 font-medium">Thiago Lúcio &bull; Diário Dev</span>
       </div>
     </article>
   </main>
 
   <!-- Footer -->
-  <footer class="text-center py-8 text-xs text-gray-400 border-t border-gray-200 bg-white mt-12">
+  <footer class="text-center py-8 text-xs text-gray-600 border-t border-gray-200 bg-white mt-12">
     <p>© 2026 Desenvolvido por Thiago Lucio.</p>
   </footer>
 

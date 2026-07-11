@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <!-- Custom Branded Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a66c2'/%3E%3Ctext x='16' y='21' font-family='system-ui, -apple-system, sans-serif' font-size='14' font-weight='900' fill='%23ffffff' text-anchor='middle'%3ETL%3C/text%3E%3C/svg%3E">
+  
   <!-- Extreme SEO Core Tags -->
   <title>Automatizando pipelines corporativos usando Python Asyncio e Quart | Thiago Lúcio - Diário Dev</title>
   <meta name="description" content="Como reduzimos o overhead operacional ao substituir tarefas sequenciais bloqueantes por concorrência nativa no processamento assíncrono de dados.">
@@ -150,7 +154,7 @@
     <article class="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-sm" itemscope itemtype="https://schema.org/TechArticle">
       <div class="flex items-center gap-2 mb-4">
         <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-sky-50 text-[#0a66c2] uppercase tracking-wider">Python / Backend</span>
-        <span class="text-xs text-gray-400 font-semibold">28 de Junho, 2026</span>
+        <span class="text-xs text-gray-600 font-semibold">28 de Junho, 2026</span>
       </div>
       
       <h1 class="text-2xl md:text-3xl font-extrabold text-[#191919] tracking-tight mb-6 leading-tight" itemprop="headline">Automatizando pipelines corporativos usando Python Asyncio e Quart</h1>
@@ -162,7 +166,7 @@
         <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Em muitos pipelines corporativos de ETL (Extract, Transform, Load), o maior gargalo não está no processamento dos dados, mas no tempo gasto aguardando respostas externas.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Consultas a bancos de dados, chamadas para APIs de terceiros, leitura de serviços internos e processos de scraping costumam consumir muito mais tempo esperando por I/O do que utilizando CPU. Quando essas operações são executadas de forma sequencial, o desperdício de recursos é inevitável.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Foi justamente esse cenário que motivou a adoção de uma arquitetura assíncrona utilizando asyncio e Quart.</p>
-<h3 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Por que Asyncio?</h3>
+<h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Por que Asyncio?</h2>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">O asyncio permite que uma única aplicação gerencie centenas ou até milhares de operações de entrada e saída simultaneamente sem a necessidade de criar uma thread para cada requisição.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Enquanto uma conexão aguarda a resposta de uma API, o event loop continua executando outras tarefas. Na prática, isso significa maior aproveitamento do hardware e uma redução significativa no tempo total de execução.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Esse modelo é especialmente eficiente para aplicações com alta carga de I/O, como:</p>
@@ -172,11 +176,11 @@
 <li class="pl-1">Processamento de filas;</li>
 <li class="pl-1">Serviços de automação;</li>
 <li class="pl-1">Gateways de integração.</li>
-<h3 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">O papel do Quart</h3>
+<h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">O papel do Quart</h2>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Para os microsserviços, a escolha foi o Quart, um framework compatível com a API do Flask, porém totalmente baseado em ASGI.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Essa compatibilidade facilitou bastante a migração de serviços existentes, permitindo manter uma estrutura familiar enquanto aproveitávamos todos os benefícios da programação assíncrona.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Com Quart foi possível criar endpoints capazes de lidar com centenas de requisições simultâneas sem bloquear a aplicação durante chamadas externas.</p>
-<h3 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Concorrência na prática</h3>
+<h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Concorrência na prática</h2>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Um exemplo simples demonstra como diversas requisições HTTP podem ser executadas simultaneamente utilizando aiohttp e asyncio.</p>
 <pre class="font-mono text-xs bg-gray-900 text-gray-100 p-4 rounded-xl my-5 overflow-x-auto block border border-gray-800 shadow-inner">import asyncio
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">import aiohttp</p>
@@ -193,12 +197,12 @@
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">print(f"Processados {len(results)} registros com sucesso!")</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">asyncio.run(main())</pre></p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Embora o exemplo utilize apenas dez requisições, o mesmo padrão pode ser aplicado para centenas de chamadas concorrentes, respeitando os limites de taxa (rate limiting) das APIs utilizadas.</p>
-<h3 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Lições aprendidas</h3>
+<h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Lições aprendidas</h2>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">A migração para um modelo assíncrono trouxe ganhos que vão além da velocidade.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">O código ficou mais escalável, reduziu a necessidade de múltiplos processos em paralelo e tornou muito mais simples lidar com grandes volumes de integrações simultâneas.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Outro benefício importante foi a redução do consumo de recursos. Em vez de manter dezenas de threads bloqueadas aguardando respostas de rede, o event loop aproveita esse tempo para executar outras tarefas, aumentando significativamente a eficiência da aplicação.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Naturalmente, programação assíncrona também exige alguns cuidados. Bibliotecas bloqueantes podem comprometer todo o desempenho do sistema, e é importante utilizar ferramentas compatíveis com asyncio, como aiohttp, asyncpg e outros drivers assíncronos.</p>
-<h3 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Resultados</h3>
+<h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Resultados</h2>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Após migrar diversos microsserviços legados para uma arquitetura totalmente não bloqueante, observamos uma redução de aproximadamente 70% no tempo total de execução dos pipelines operacionais.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Além da melhora no desempenho, a arquitetura tornou-se mais preparada para crescer horizontalmente, suportando um número muito maior de integrações simultâneas sem necessidade de aumentar proporcionalmente os recursos computacionais.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Para aplicações onde o gargalo está em operações de rede e acesso a serviços externos, a combinação de Python, Asyncio e Quart mostrou ser uma solução extremamente eficiente, mantendo a simplicidade da linguagem sem abrir mão de escalabilidade e alto desempenho.</p>
@@ -208,13 +212,13 @@
         <a href="../index.html" class="text-xs font-bold text-[#0a66c2] hover:text-[#004182] hover:underline flex items-center gap-1.5">
           &larr; Voltar para o início
         </a>
-        <span class="text-[10px] text-gray-400 font-medium">Thiago Lúcio &bull; Diário Dev</span>
+        <span class="text-[10px] text-gray-600 font-medium">Thiago Lúcio &bull; Diário Dev</span>
       </div>
     </article>
   </main>
 
   <!-- Footer -->
-  <footer class="text-center py-8 text-xs text-gray-400 border-t border-gray-200 bg-white mt-12">
+  <footer class="text-center py-8 text-xs text-gray-600 border-t border-gray-200 bg-white mt-12">
     <p>© 2026 Desenvolvido por Thiago Lucio.</p>
   </footer>
 

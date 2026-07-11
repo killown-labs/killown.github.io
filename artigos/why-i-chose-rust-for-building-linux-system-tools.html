@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <!-- Custom Branded Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a66c2'/%3E%3Ctext x='16' y='21' font-family='system-ui, -apple-system, sans-serif' font-size='14' font-weight='900' fill='%23ffffff' text-anchor='middle'%3ETL%3C/text%3E%3C/svg%3E">
+  
   <!-- Extreme SEO Core Tags -->
   <title>Why I chose Rust for building Linux system tools | Thiago Lúcio - Diário Dev</title>
   <meta name="description" content="My experience developing Flux, a fast file manager with GTK4, and the benefits of memory safety and concurrency guaranteed by the Rust compiler.">
@@ -150,7 +154,7 @@
     <article class="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-sm" itemscope itemtype="https://schema.org/TechArticle">
       <div class="flex items-center gap-2 mb-4">
         <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-sky-50 text-[#0a66c2] uppercase tracking-wider">Rust / Systems</span>
-        <span class="text-xs text-gray-400 font-semibold">July 10, 2026</span>
+        <span class="text-xs text-gray-600 font-semibold">July 10, 2026</span>
       </div>
       
       <h1 class="text-2xl md:text-3xl font-extrabold text-[#191919] tracking-tight mb-6 leading-tight" itemprop="headline">Why I chose Rust for building Linux system tools</h1>
@@ -164,20 +168,20 @@
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">This is precisely why I chose Rust.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Rust delivers performance equivalent to C and C++, but introduces an ownership and borrowing system that eliminates an entire class of bugs at compile time. Instead of discovering memory issues after the program is in production, the compiler simply blocks compilation.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">This model completely changes the way low-level software is developed.</p>
-<h3 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">The Flux Project</h3>
+<h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">The Flux Project</h2>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">While developing Flux, my Linux file manager written in Rust using GTK4 and Relm4, I quickly realized how much of a difference these guarantees make.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">While implementing directory reading operations, file system monitoring, and GUI updates, I could focus entirely on the application logic without the constant worry of invalid pointers, use-after-free, or data races.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">This doesn't mean Rust eliminates all complexity. There is a steep learning curve, especially to understand the ownership system. However, once these concepts click, they cease to be an obstacle and begin functioning as an excellent, full-time code reviewer.</p>
-<h3 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Key Takeaways with GTK4 and Relm4</h3>
-<h3 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Reactive Architecture</h3>
+<h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Key Takeaways with GTK4 and Relm4</h2>
+<h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Reactive Architecture</h2>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Relm4 uses a state-driven architecture that makes code highly organized.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">The interface is no longer a collection of scattered callbacks; instead, it reacts automatically to the application's state changes. For anyone who has worked with React, Vue, or Elm, the philosophy is very familiar.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">This separation of state, messages, and view updates makes maintenance much easier as the project grows.</p>
-<h3 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Fearless Concurrency</h3>
+<h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Fearless Concurrency</h2>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Another key feature that caught my attention was how easy it is to run tasks in parallel.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Potentially time-consuming operations, such as listing directories with thousands of files, can be executed in separate threads while keeping the UI responsive.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">The most interesting part is that the compiler prevents various types of concurrency errors before the application even runs. This drastically reduces the chance of encountering those intermittent bugs that only show up under specific conditions.</p>
-<h3 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Is It Worth Learning Rust?</h3>
+<h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Is It Worth Learning Rust?</h2>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">In my opinion, yes.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Rust is not the easiest language to get started with. The compiler is demanding, and at first, it might feel like it is "fighting" you all the time.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">After some time, however, it becomes clear that this rigidity exists precisely to prevent issues that, in other languages, might only appear months later in production.</p>
@@ -189,13 +193,13 @@
         <a href="../index.html" class="text-xs font-bold text-[#0a66c2] hover:text-[#004182] hover:underline flex items-center gap-1.5">
           &larr; Back to home
         </a>
-        <span class="text-[10px] text-gray-400 font-medium">Thiago Lúcio &bull; Diário Dev</span>
+        <span class="text-[10px] text-gray-600 font-medium">Thiago Lúcio &bull; Diário Dev</span>
       </div>
     </article>
   </main>
 
   <!-- Footer -->
-  <footer class="text-center py-8 text-xs text-gray-400 border-t border-gray-200 bg-white mt-12">
+  <footer class="text-center py-8 text-xs text-gray-600 border-t border-gray-200 bg-white mt-12">
     <p>© 2026 Desenvolvido por Thiago Lucio.</p>
   </footer>
 
