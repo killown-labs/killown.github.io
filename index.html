@@ -890,7 +890,11 @@
     }
 
     // Initialize commits on load
-    document.addEventListener('DOMContentLoaded', fetchGitHubCommits);
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', fetchGitHubCommits);
+    } else {
+      fetchGitHubCommits();
+    }
 
     
     
