@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Por que escolhi Rust para construir ferramentas de sistemas Linux - Thiago Lúcio</title>
+  
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f3f2ef;
+      color: #191919;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+  </style>
+</head>
+<body class="min-h-screen pb-16">
+
+  <!-- Static Navbar -->
+  <header class="sticky top-0 bg-white border-b border-gray-200/80 z-40 shadow-sm">
+    <div class="max-w-4xl mx-auto px-4 h-14 flex items-center justify-between">
+      <a href="../index.html" class="flex items-center gap-1.5 text-xs font-bold text-gray-500 hover:text-[#0a66c2] transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Voltar para o Portfólio</span>
+      </a>
+      
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-lg bg-[#0a66c2] flex items-center justify-center text-white font-extrabold text-sm tracking-tight">TL</div>
+        <span class="font-bold text-sm tracking-tight text-[#191919] hidden sm:inline">Thiago Lúcio</span>
+      </div>
+
+      <!-- Language Toggle (Navigates to opposite lang version of this article) -->
+      <a 
+        href="why-i-chose-rust-for-building-linux-system-tools.html"
+        class="flex items-center gap-1 px-2.5 py-1 rounded-md border border-gray-200 text-xs font-bold hover:bg-gray-50 text-gray-700 transition-colors shadow-sm cursor-pointer"
+        title="Switch to English"
+      >
+        <svg class="w-3.5 h-3.5 text-[#0a66c2]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        <span>EN</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Article Container -->
+  <main class="max-w-3xl mx-auto px-4 py-8">
+    <article class="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-sm">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-sky-50 text-[#0a66c2] uppercase tracking-wider">Rust / Systems</span>
+        <span class="text-xs text-gray-400 font-semibold">10 de Julho, 2026</span>
+      </div>
+      
+      <h1 class="text-2xl md:text-3xl font-extrabold text-[#191919] tracking-tight mb-6 leading-tight">Por que escolhi Rust para construir ferramentas de sistemas Linux</h1>
+      
+      <div class="border-b border-gray-100 mb-6"></div>
+      
+      <!-- Article Content -->
+      <div class="space-y-4 text-gray-700 font-normal">
+        <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Construir ferramentas de sistema exige velocidade máxima, controle de memória eficiente e segurança. No passado, C e C++ dominavam esse território, mas o custo mental de prevenir falhas de segmentação ou vazamentos de memória é elevado.</p>
+<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Com <strong class="font-bold text-[#191919]">Rust</strong>, consegui desenvolver o <strong class="font-bold text-[#191919]">Flux</strong> (gerenciador de arquivos para Linux usando GTK4 e Relm4) com a tranquilidade de que o compilador protege meu código de condições de corrida de dados e ponteiros nulos.</p>
+<h3 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">O que aprendi com GTK4 e Relm4:</h3>
+<ol class="list-decimal pl-5 space-y-2 my-4 text-xs md:text-sm text-gray-650 font-normal"><li class="pl-1"><strong class="font-bold text-[#191919]">Orientado a Estado Reativo</strong>: O Relm4 facilita a modelagem de UI reativa de uma forma que parece moderna e limpa, comparável com frameworks frontend como React.</li>
+<li class="pl-1"><strong class="font-bold text-[#191919]">Concorrência Segura</strong>: Processar a listagem de diretórios gigantescos em threads separadas sem se preocupar com travamentos repentinos de memória.</li>
+<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Se você desenvolve utilitários para Linux, recomendo fortemente dar uma chance a Rust!</p>
+      </div>
+      
+      <div class="border-t border-gray-100 mt-10 pt-6 flex justify-between items-center">
+        <a href="../index.html" class="text-xs font-bold text-[#0a66c2] hover:text-[#004182] hover:underline flex items-center gap-1.5">
+          &larr; Voltar para o início
+        </a>
+        <span class="text-[10px] text-gray-400 font-medium">Thiago Lúcio &bull; Diário Dev</span>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-8 text-xs text-gray-400 border-t border-gray-200 bg-white mt-12">
+    <p>© 2026 Desenvolvido por Thiago Lucio.</p>
+  </footer>
+
+</body>
+</html>
