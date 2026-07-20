@@ -1608,7 +1608,23 @@ Today, I leverage over a decade of independent experience optimizing web infrast
       
       <div class="lang-pt grid grid-cols-1 md:grid-cols-2 gap-4">
         
-    <article class="p-6 bg-white border border-gray-200/80 rounded-xl hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
+    <article class="pt-blog-post p-6 bg-white border border-gray-200/80 rounded-xl hover:shadow-md transition-shadow duration-300 flex flex-col justify-between ">
+      <div>
+        <div class="flex items-center justify-between gap-2 mb-3">
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-sky-50 text-[#0a66c2]">PostgreSQL / Database</span>
+          <span class="text-xs text-gray-600 font-medium">19 de Julho, 2026</span>
+        </div>
+        <h3 class="text-sm font-extrabold text-[#191919] mb-1.5 hover:text-[#0a66c2] hover:underline">
+          <a href="artigos/postgresql-jsonb-por-que-muita-gente-escolhe-isso-em-vez-do-mongodb.html">PostgreSQL + JSONB: por que muita gente escolhe isso em vez do MongoDB</a>
+        </h3>
+        <p class="text-xs text-[#5e5e5e] leading-relaxed mb-4 line-clamp-3">Quando alguém precisa armazenar documentos JSON, a primeira opção que costuma vir à cabeça é o MongoDB. Mas hoje o PostgreSQL com JSONB resolve isso de forma tão eficiente que não faz sentido adicionar outro banco.</p>
+      </div>
+      <a href="artigos/postgresql-jsonb-por-que-muita-gente-escolhe-isso-em-vez-do-mongodb.html" class="text-xs font-bold text-[#0a66c2] hover:text-[#004182] hover:underline self-start flex items-center gap-1">
+        Ler publicação completa &rarr;
+      </a>
+    </article>
+  
+    <article class="pt-blog-post p-6 bg-white border border-gray-200/80 rounded-xl hover:shadow-md transition-shadow duration-300 flex flex-col justify-between ">
       <div>
         <div class="flex items-center justify-between gap-2 mb-3">
           <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-sky-50 text-[#0a66c2]">Rust / Systems</span>
@@ -1624,7 +1640,7 @@ Today, I leverage over a decade of independent experience optimizing web infrast
       </a>
     </article>
   
-    <article class="p-6 bg-white border border-gray-200/80 rounded-xl hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
+    <article class="pt-blog-post p-6 bg-white border border-gray-200/80 rounded-xl hover:shadow-md transition-shadow duration-300 flex flex-col justify-between hidden">
       <div>
         <div class="flex items-center justify-between gap-2 mb-3">
           <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-sky-50 text-[#0a66c2]">Python / Backend</span>
@@ -1643,7 +1659,23 @@ Today, I leverage over a decade of independent experience optimizing web infrast
       </div>
       <div class="lang-en hidden grid grid-cols-1 md:grid-cols-2 gap-4">
         
-    <article class="p-6 bg-white border border-gray-200/80 rounded-xl hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
+    <article class="en-blog-post p-6 bg-white border border-gray-200/80 rounded-xl hover:shadow-md transition-shadow duration-300 flex flex-col justify-between ">
+      <div>
+        <div class="flex items-center justify-between gap-2 mb-3">
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-sky-50 text-[#0a66c2]">PostgreSQL / Database</span>
+          <span class="text-xs text-gray-600 font-medium">July 19, 2026</span>
+        </div>
+        <h3 class="text-sm font-extrabold text-[#191919] mb-1.5 hover:text-[#0a66c2] hover:underline">
+          <a href="artigos/postgresql-jsonb-why-many-choose-it-over-mongodb.html">PostgreSQL + JSONB: Why Many Choose It Over MongoDB</a>
+        </h3>
+        <p class="text-xs text-[#5e5e5e] leading-relaxed mb-4 line-clamp-3">When someone needs to store JSON documents, MongoDB is often the first option that comes to mind. But today, PostgreSQL with JSONB solves this so efficiently that adding another database makes little sense.</p>
+      </div>
+      <a href="artigos/postgresql-jsonb-why-many-choose-it-over-mongodb.html" class="text-xs font-bold text-[#0a66c2] hover:text-[#004182] hover:underline self-start flex items-center gap-1">
+        Read full publication &rarr;
+      </a>
+    </article>
+  
+    <article class="en-blog-post p-6 bg-white border border-gray-200/80 rounded-xl hover:shadow-md transition-shadow duration-300 flex flex-col justify-between ">
       <div>
         <div class="flex items-center justify-between gap-2 mb-3">
           <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-sky-50 text-[#0a66c2]">Rust / Systems</span>
@@ -1659,7 +1691,7 @@ Today, I leverage over a decade of independent experience optimizing web infrast
       </a>
     </article>
   
-    <article class="p-6 bg-white border border-gray-200/80 rounded-xl hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
+    <article class="en-blog-post p-6 bg-white border border-gray-200/80 rounded-xl hover:shadow-md transition-shadow duration-300 flex flex-col justify-between hidden">
       <div>
         <div class="flex items-center justify-between gap-2 mb-3">
           <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-sky-50 text-[#0a66c2]">Python / Backend</span>
@@ -1676,6 +1708,9 @@ Today, I leverage over a decade of independent experience optimizing web infrast
     </article>
   
       </div>
+
+      <!-- Blog Pagination Controls -->
+      <div id="blog-pagination-container" class="flex items-center justify-center gap-2 pt-4"></div>
     </section>
 
   </main>
@@ -1689,6 +1724,100 @@ Today, I leverage over a decade of independent experience optimizing web infrast
 
   <script>
     let currentLang = 'pt';
+    let currentBlogPage = 1;
+    const postsPerPage = 2;
+
+    function updateBlogPagination() {
+      const ptPosts = document.querySelectorAll('.pt-blog-post');
+      const enPosts = document.querySelectorAll('.en-blog-post');
+      
+      const totalPt = ptPosts.length;
+      const totalEn = enPosts.length;
+      const total = currentLang === 'pt' ? totalPt : totalEn;
+      const totalPages = Math.ceil(total / postsPerPage);
+      
+      if (totalPages <= 1) {
+        const container = document.getElementById('blog-pagination-container');
+        if (container) container.innerHTML = '';
+        return;
+      }
+      
+      if (currentBlogPage > totalPages) currentBlogPage = totalPages;
+      if (currentBlogPage < 1) currentBlogPage = 1;
+      
+      const ptActive = currentLang === 'pt';
+      
+      // Update visibility of posts
+      ptPosts.forEach((post, idx) => {
+        if (!ptActive) {
+          post.classList.add('hidden');
+          return;
+        }
+        const start = (currentBlogPage - 1) * postsPerPage;
+        const end = start + postsPerPage;
+        if (idx >= start && idx < end) {
+          post.classList.remove('hidden');
+        } else {
+          post.classList.add('hidden');
+        }
+      });
+
+      enPosts.forEach((post, idx) => {
+        if (ptActive) {
+          post.classList.add('hidden');
+          return;
+        }
+        const start = (currentBlogPage - 1) * postsPerPage;
+        const end = start + postsPerPage;
+        if (idx >= start && idx < end) {
+          post.classList.remove('hidden');
+        } else {
+          post.classList.add('hidden');
+        }
+      });
+      
+      const container = document.getElementById('blog-pagination-container');
+      if (!container) return;
+      
+      let html = '';
+      
+      // Previous button
+      const prevDisabled = currentBlogPage === 1;
+      html += '<button ' + (prevDisabled ? 'disabled' : '') + 
+              ' onclick="' + (prevDisabled ? '' : 'changeBlogPage(' + (currentBlogPage - 1) + ')') + '"' +
+              ' class="flex items-center justify-center w-8 h-8 rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-50 transition-all ' + 
+              (prevDisabled ? 'opacity-40 cursor-not-allowed' : 'cursor-pointer hover:border-gray-300 hover:text-[#0a66c2]') + '"' +
+              ' title="' + (currentLang === 'pt' ? 'Anterior' : 'Previous') + '">' +
+              '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>' +
+              '</button>';
+      
+      // Page numbers
+      for (let i = 1; i <= totalPages; i++) {
+        const isCurrent = i === currentBlogPage;
+        html += '<button onclick="changeBlogPage(' + i + ')"' +
+                ' class="flex items-center justify-center w-8 h-8 rounded-lg border text-xs font-bold transition-all cursor-pointer ' + 
+                (isCurrent ? 'bg-[#0a66c2] border-[#0a66c2] text-white shadow-xs' : 'border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300 hover:text-[#0a66c2]') + '">' +
+                i +
+                '</button>';
+      }
+      
+      // Next button
+      const nextDisabled = currentBlogPage === totalPages;
+      html += '<button ' + (nextDisabled ? 'disabled' : '') + 
+              ' onclick="' + (nextDisabled ? '' : 'changeBlogPage(' + (currentBlogPage + 1) + ')') + '"' +
+              ' class="flex items-center justify-center w-8 h-8 rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-50 transition-all ' + 
+              (nextDisabled ? 'opacity-40 cursor-not-allowed' : 'cursor-pointer hover:border-gray-300 hover:text-[#0a66c2]') + '"' +
+              ' title="' + (currentLang === 'pt' ? 'Próxima' : 'Next') + '">' +
+              '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>' +
+              '</button>';
+      
+      container.innerHTML = html;
+    }
+
+    function changeBlogPage(page) {
+      currentBlogPage = page;
+      updateBlogPagination();
+    }
     
     function toggleLanguage() {
       currentLang = currentLang === 'pt' ? 'en' : 'pt';
@@ -1708,6 +1837,9 @@ Today, I leverage over a decade of independent experience optimizing web infrast
         if (btnText) btnText.innerText = 'PT';
         document.getElementById('lang-toggle-btn').title = 'Mudar para Português';
       }
+
+      currentBlogPage = 1;
+      updateBlogPagination();
     }
 
     let showAllCerts = false;
@@ -1769,6 +1901,8 @@ Today, I leverage over a decade of independent experience optimizing web infrast
         if (upIcon) upIcon.classList.add('hidden');
       }
     }
+
+    updateBlogPagination();
 
     
     
