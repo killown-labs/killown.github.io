@@ -168,34 +168,34 @@
 <h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">O que é JSONB?</h2>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">O JSONB é um tipo de dado do PostgreSQL que armazena documentos JSON em formato binário.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Na prática isso significa:</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">* consultas rápidas em campos internos;</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">* indexação dos atributos do JSON;</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">* suporte completo a transações (ACID);</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">* possibilidade de misturar dados relacionais e documentos na mesma tabela.</p>
+<ul class="list-disc pl-5 space-y-2 my-4 text-xs md:text-sm text-gray-650 font-normal"><li class="pl-1">consultas rápidas em campos internos;</li>
+<li class="pl-1">indexação dos atributos do JSON;</li>
+<li class="pl-1">suporte completo a transações (ACID);</li>
+<li class="pl-1">possibilidade de misturar dados relacionais e documentos na mesma tabela.</li>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Exemplo:</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">```sql</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">CREATE TABLE usuarios (</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">id SERIAL PRIMARY KEY,</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">nome TEXT,</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">perfil JSONB</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">);</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">```</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">```json</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">{</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">"tema": "dark",</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">"notificacoes": true,</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">"redes": {</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">"github": "thiagolucio",</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">"linkedin": "thiagolucio"</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">}</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">}</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">```</p>
+<pre class="font-mono text-xs bg-gray-900 text-gray-100 p-4 rounded-xl my-5 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>
+<span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>CREATE TABLE</span> usuarios (
+    id <span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>SERIAL</span> <span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>PRIMARY KEY</span>,
+    nome <span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>TEXT</span>,
+    perfil <span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>JSONB</span>
+);
+</code></pre>
+<pre class="font-mono text-xs bg-gray-900 text-gray-100 p-4 rounded-xl my-5 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>
+{
+  <span class="text-sky-<span class="text-amber-400">300</span> font-medium">"tema"</span>: <span class="text-emerald-<span class="text-amber-400">400</span>">"dark"</span>,
+  <span class="text-sky-<span class="text-amber-400">300</span> font-medium">"notificacoes"</span>: <span class="text-purple-<span class="text-amber-400">400</span> font-bold">true</span>,
+  <span class="text-sky-<span class="text-amber-400">300</span> font-medium">"redes"</span>: {
+    <span class="text-sky-<span class="text-amber-400">300</span> font-medium">"github"</span>: <span class="text-emerald-<span class="text-amber-400">400</span>">"thiagolucio"</span>,
+    <span class="text-sky-<span class="text-amber-400">300</span> font-medium">"linkedin"</span>: <span class="text-emerald-<span class="text-amber-400">400</span>">"thiagolucio"</span>
+  }
+}
+</code></pre>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Você pode consultar qualquer campo:</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">```sql</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">SELECT *</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">FROM usuarios</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">WHERE perfil->>'tema' = 'dark';</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">```</p>
+<pre class="font-mono text-xs bg-gray-900 text-gray-100 p-4 rounded-xl my-5 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>
+<span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>SELECT</span> *
+<span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>FROM</span> usuarios
+<span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>WHERE</span> perfil-&gt;&gt;<span class=<span class="text-emerald-400">"text-emerald-400"</span>>'tema'</span> = <span class=<span class="text-emerald-400">"text-emerald-400"</span>>'dark'</span>;
+</code></pre>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Ou até indexar esse atributo para ficar extremamente rápido.</p>
 <h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Por que isso pode ser melhor que MongoDB?</h2>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal"><strong class="font-bold text-[#191919]">1. Um banco para tudo</strong></p>
@@ -217,12 +217,12 @@
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal"><strong class="font-bold text-[#191919]">5. SQL continua sendo SQL</strong></p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Você pode combinar consultas relacionais com JSON na mesma instrução.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Exemplo:</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">```sql</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">SELECT nome</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">FROM usuarios</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">WHERE perfil->>'tema' = 'dark'</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">AND criado_em >= CURRENT_DATE - INTERVAL '30 days';</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">```</p>
+<pre class="font-mono text-xs bg-gray-900 text-gray-100 p-4 rounded-xl my-5 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>
+<span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>SELECT</span> nome
+<span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>FROM</span> usuarios
+<span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>WHERE</span> perfil-&gt;&gt;<span class=<span class="text-emerald-400">"text-emerald-400"</span>>'tema'</span> = <span class=<span class="text-emerald-400">"text-emerald-400"</span>>'dark'</span>
+<span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>AND</span> criado_em &gt;= <span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>CURRENT_DATE</span> - <span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>INTERVAL</span> <span class=<span class="text-emerald-400">"text-emerald-400"</span>>'<span class=<span class="text-emerald-400">"text-amber-400"</span>>30</span> days'</span>;
+</code></pre>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Essa flexibilidade é difícil de encontrar em bancos exclusivamente orientados a documentos.</p>
 <h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Então MongoDB ficou ruim?</h2>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Não.</p>
