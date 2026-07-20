@@ -174,27 +174,27 @@
 <li class="pl-1">ability to mix relational data and documents in the same table.</li>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Example:</p>
 <pre class="font-mono text-xs bg-gray-900 text-gray-100 p-4 rounded-xl my-5 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>
-<span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>CREATE TABLE</span> users (
-    id <span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>SERIAL</span> <span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>PRIMARY KEY</span>,
-    name <span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>TEXT</span>,
-    profile <span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>JSONB</span>
+<span class="text-blue-400 font-bold">CREATE TABLE</span> users (
+    id <span class="text-blue-400 font-bold">SERIAL</span> <span class="text-blue-400 font-bold">PRIMARY KEY</span>,
+    name <span class="text-blue-400 font-bold">TEXT</span>,
+    profile <span class="text-blue-400 font-bold">JSONB</span>
 );
 </code></pre>
 <pre class="font-mono text-xs bg-gray-900 text-gray-100 p-4 rounded-xl my-5 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>
 {
-  <span class="text-sky-<span class="text-amber-400">300</span> font-medium">"theme"</span>: <span class="text-emerald-<span class="text-amber-400">400</span>">"dark"</span>,
-  <span class="text-sky-<span class="text-amber-400">300</span> font-medium">"notifications"</span>: <span class="text-purple-<span class="text-amber-400">400</span> font-bold">true</span>,
-  <span class="text-sky-<span class="text-amber-400">300</span> font-medium">"networks"</span>: {
-    <span class="text-sky-<span class="text-amber-400">300</span> font-medium">"github"</span>: <span class="text-emerald-<span class="text-amber-400">400</span>">"thiagolucio"</span>,
-    <span class="text-sky-<span class="text-amber-400">300</span> font-medium">"linkedin"</span>: <span class="text-emerald-<span class="text-amber-400">400</span>">"thiagolucio"</span>
+  <span class="text-sky-300 font-medium">"theme"</span>: <span class="text-emerald-400">"dark"</span>,
+  <span class="text-sky-300 font-medium">"notifications"</span>: <span class="text-purple-400 font-bold">true</span>,
+  <span class="text-sky-300 font-medium">"networks"</span>: {
+    <span class="text-sky-300 font-medium">"github"</span>: <span class="text-emerald-400">"thiagolucio"</span>,
+    <span class="text-sky-300 font-medium">"linkedin"</span>: <span class="text-emerald-400">"thiagolucio"</span>
   }
 }
 </code></pre>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">You can query any field:</p>
 <pre class="font-mono text-xs bg-gray-900 text-gray-100 p-4 rounded-xl my-5 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>
-<span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>SELECT</span> *
-<span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>FROM</span> users
-<span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>WHERE</span> profile-&gt;&gt;<span class=<span class="text-emerald-400">"text-emerald-400"</span>>'theme'</span> = <span class=<span class="text-emerald-400">"text-emerald-400"</span>>'dark'</span>;
+<span class="text-blue-400 font-bold">SELECT</span> *
+<span class="text-blue-400 font-bold">FROM</span> users
+<span class="text-blue-400 font-bold">WHERE</span> profile-&gt;&gt;<span class="text-emerald-400">'theme'</span> = <span class="text-emerald-400">'dark'</span>;
 </code></pre>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Or even index this attribute to make it extremely fast.</p>
 <h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Why can this be better than MongoDB?</h2>
@@ -218,10 +218,10 @@
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">You can combine relational queries with JSON in the same statement.</p>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Example:</p>
 <pre class="font-mono text-xs bg-gray-900 text-gray-100 p-4 rounded-xl my-5 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>
-<span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>SELECT</span> name
-<span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>FROM</span> users
-<span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>WHERE</span> profile-&gt;&gt;<span class=<span class="text-emerald-400">"text-emerald-400"</span>>'theme'</span> = <span class=<span class="text-emerald-400">"text-emerald-400"</span>>'dark'</span>
-<span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>AND</span> created_at &gt;= <span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>CURRENT_DATE</span> - <span class=<span class="text-emerald-400">"text-blue-<span class="</span>text-amber-400<span class="text-emerald-400">">400</span> font-bold"</span>>INTERVAL</span> <span class=<span class="text-emerald-400">"text-emerald-400"</span>>'<span class=<span class="text-emerald-400">"text-amber-400"</span>>30</span> days'</span>;
+<span class="text-blue-400 font-bold">SELECT</span> name
+<span class="text-blue-400 font-bold">FROM</span> users
+<span class="text-blue-400 font-bold">WHERE</span> profile-&gt;&gt;<span class="text-emerald-400">'theme'</span> = <span class="text-emerald-400">'dark'</span>
+<span class="text-blue-400 font-bold">AND</span> created_at &gt;= <span class="text-blue-400 font-bold">CURRENT_DATE</span> - <span class="text-blue-400 font-bold">INTERVAL</span> '<span class="text-amber-400">30</span> days';
 </code></pre>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">This flexibility is hard to find in databases that are strictly document-oriented.</p>
 <h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">So, has MongoDB become bad?</h2>

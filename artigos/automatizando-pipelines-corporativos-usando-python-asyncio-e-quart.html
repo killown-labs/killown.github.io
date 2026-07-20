@@ -183,23 +183,23 @@
 <h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Concorrência na prática</h2>
 <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Um exemplo simples demonstra como diversas requisições HTTP podem ser executadas simultaneamente utilizando aiohttp e asyncio.</p>
 <pre class="font-mono text-xs bg-gray-900 text-gray-100 p-4 rounded-xl my-5 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>
-<span class=<span class="text-emerald-<span class="text-amber-400">400</span>">"text-purple-<span class="text-amber-400">400</span> font-bold"</span>>import</span> asyncio
-<span class=<span class="text-emerald-<span class="text-amber-400">400</span>">"text-purple-<span class="text-amber-400">400</span> font-bold"</span>>import</span> aiohttp
+<span class="text-purple-400 font-bold">import</span> asyncio
+<span class="text-purple-400 font-bold">import</span> aiohttp
 
-<span class=<span class="text-emerald-<span class="text-amber-400">400</span>">"text-purple-<span class="text-amber-400">400</span> font-bold"</span>>async</span> <span class=<span class="text-emerald-<span class="text-amber-400">400</span>">"text-purple-<span class="text-amber-400">400</span> font-bold"</span>>def</span> fetch_api(session, url):
-    <span class=<span class="text-emerald-<span class="text-amber-400">400</span>">"text-purple-<span class="text-amber-400">400</span> font-bold"</span>>async</span> <span class=<span class="text-emerald-<span class="text-amber-400">400</span>">"text-purple-<span class="text-amber-400">400</span> font-bold"</span>>with</span> session.get(url) <span class=<span class="text-emerald-<span class="text-amber-400">400</span>">"text-purple-<span class="text-amber-400">400</span> font-bold"</span>>as</span> response:
-        <span class=<span class="text-emerald-<span class="text-amber-400">400</span>">"text-purple-<span class="text-amber-400">400</span> font-bold"</span>>return</span> <span class=<span class="text-emerald-<span class="text-amber-400">400</span>">"text-purple-<span class="text-amber-400">400</span> font-bold"</span>>await</span> response.json()
+<span class="text-purple-400 font-bold">async</span> <span class="text-purple-400 font-bold">def</span> fetch_api(session, url):
+    <span class="text-purple-400 font-bold">async</span> <span class="text-purple-400 font-bold">with</span> session.get(url) <span class="text-purple-400 font-bold">as</span> response:
+        <span class="text-purple-400 font-bold">return</span> <span class="text-purple-400 font-bold">await</span> response.json()
 
-<span class=<span class="text-emerald-<span class="text-amber-400">400</span>">"text-purple-<span class="text-amber-400">400</span> font-bold"</span>>async</span> <span class=<span class="text-emerald-<span class="text-amber-400">400</span>">"text-purple-<span class="text-amber-400">400</span> font-bold"</span>>def</span> main():
-    <span class=<span class="text-emerald-<span class="text-amber-400">400</span>">"text-purple-<span class="text-amber-400">400</span> font-bold"</span>>async</span> <span class=<span class="text-emerald-<span class="text-amber-400">400</span>">"text-purple-<span class="text-amber-400">400</span> font-bold"</span>>with</span> aiohttp.ClientSession() <span class=<span class="text-emerald-<span class="text-amber-400">400</span>">"text-purple-<span class="text-amber-400">400</span> font-bold"</span>>as</span> session:
+<span class="text-purple-400 font-bold">async</span> <span class="text-purple-400 font-bold">def</span> main():
+    <span class="text-purple-400 font-bold">async</span> <span class="text-purple-400 font-bold">with</span> aiohttp.ClientSession() <span class="text-purple-400 font-bold">as</span> session:
         tasks = [
-            fetch_api(session, f<span class="text-emerald-<span class="text-amber-400">400</span>">"https://api.example.com/data/{i}"</span>)
-            <span class=<span class="text-emerald-<span class="text-amber-400">400</span>">"text-purple-<span class="text-amber-400">400</span> font-bold"</span>>for</span> i <span class=<span class="text-emerald-<span class="text-amber-400">400</span>">"text-purple-<span class="text-amber-400">400</span> font-bold"</span>>in</span> range(<span class="text-amber-400">10</span>)
+            fetch_api(session, f<span class="text-emerald-400">"https://api.example.com/data/{i}"</span>)
+            <span class="text-purple-400 font-bold">for</span> i <span class="text-purple-400 font-bold">in</span> range(<span class="text-amber-400">10</span>)
         ]
 
-        results = <span class=<span class="text-emerald-<span class="text-amber-400">400</span>">"text-purple-<span class="text-amber-400">400</span> font-bold"</span>>await</span> asyncio.gather(*tasks)
+        results = <span class="text-purple-400 font-bold">await</span> asyncio.gather(*tasks)
 
-        <span class=<span class="text-emerald-<span class="text-amber-400">400</span>">"text-purple-<span class="text-amber-400">400</span> font-bold"</span>>print</span>(f<span class="text-emerald-<span class="text-amber-400">400</span>">"Processados {len(results)} registros com sucesso!"</span>)
+        <span class="text-purple-400 font-bold">print</span>(f<span class="text-emerald-400">"Processados {len(results)} registros com sucesso!"</span>)
 
 asyncio.run(main())
 </code></pre>
