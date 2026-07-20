@@ -163,16 +163,16 @@
       
       <!-- Article Content -->
       <div class="space-y-4 text-gray-700 font-normal" itemprop="articleBody">
-        <p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Quando alguém precisa armazenar documentos JSON, a primeira opção que costuma vir à cabeça é o MongoDB.</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Mas hoje o PostgreSQL, usando <strong class="font-bold text-[#191919]">JSONB</strong>, resolve esse problema de forma tão eficiente que, em muitos projetos, não faz sentido adicionar outro banco apenas para isso.</p>
+        <p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Quando alguém precisa armazenar documentos JSON, a primeira opção que costuma vir à cabeça é o MongoDB.</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Mas hoje o PostgreSQL, usando <strong class="font-bold text-[#191919]">JSONB</strong>, resolve esse problema de forma tão eficiente que, em muitos projetos, não faz sentido adicionar outro banco apenas para isso.</p>
 <h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">O que é JSONB?</h2>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">O JSONB é um tipo de dado do PostgreSQL que armazena documentos JSON em formato binário.</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Na prática isso significa:</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">O JSONB é um tipo de dado do PostgreSQL que armazena documentos JSON em formato binário.</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Na prática isso significa:</p>
 <ul class="list-disc pl-5 space-y-2 my-4 text-xs md:text-sm text-gray-650 font-normal"><li class="pl-1">consultas rápidas em campos internos;</li>
 <li class="pl-1">indexação dos atributos do JSON;</li>
 <li class="pl-1">suporte completo a transações (ACID);</li>
 <li class="pl-1">possibilidade de misturar dados relacionais e documentos na mesma tabela.</li>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Exemplo:</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Exemplo:</p>
 <pre class="font-mono text-xs bg-gray-900 text-gray-100 p-4 rounded-xl my-5 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>
 <span class="text-blue-400 font-bold">CREATE TABLE</span> usuarios (
     id <span class="text-blue-400 font-bold">SERIAL</span> <span class="text-blue-400 font-bold">PRIMARY KEY</span>,
@@ -190,46 +190,46 @@
   }
 }
 </code></pre>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Você pode consultar qualquer campo:</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Você pode consultar qualquer campo:</p>
 <pre class="font-mono text-xs bg-gray-900 text-gray-100 p-4 rounded-xl my-5 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>
 <span class="text-blue-400 font-bold">SELECT</span> *
 <span class="text-blue-400 font-bold">FROM</span> usuarios
 <span class="text-blue-400 font-bold">WHERE</span> perfil-&gt;&gt;<span class="text-emerald-400">'tema'</span> = <span class="text-emerald-400">'dark'</span>;
 </code></pre>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Ou até indexar esse atributo para ficar extremamente rápido.</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Ou até indexar esse atributo para ficar extremamente rápido.</p>
 <h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Por que isso pode ser melhor que MongoDB?</h2>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal"><strong class="font-bold text-[#191919]">1. Um banco para tudo</strong></p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Em vez de manter PostgreSQL para dados relacionais e MongoDB para documentos, você usa apenas PostgreSQL.</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Menos infraestrutura, menos backup, menos monitoramento e menos complexidade.</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">---</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal"><strong class="font-bold text-[#191919]">2. ACID de verdade</strong></p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">PostgreSQL sempre teve um dos modelos de transação mais robustos do mercado.</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Quando várias operações precisam acontecer juntas, você tem garantias fortes de consistência.</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">---</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal"><strong class="font-bold text-[#191919]">3. JOINs continuam existindo</strong></p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Se amanhã parte do JSON virar uma tabela normal, basta fazer JOIN.</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Você não precisa migrar de tecnologia.</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">---</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal"><strong class="font-bold text-[#191919]">4. Índices eficientes</strong></p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">O PostgreSQL possui índices GIN para JSONB, permitindo consultas muito rápidas em documentos grandes.</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Você consegue pesquisar por chaves, valores e estruturas internas sem precisar percorrer o documento inteiro.</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">---</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal"><strong class="font-bold text-[#191919]">5. SQL continua sendo SQL</strong></p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Você pode combinar consultas relacionais com JSON na mesma instrução.</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Exemplo:</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal"><strong class="font-bold text-[#191919]">1. Um banco para tudo</strong></p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Em vez de manter PostgreSQL para dados relacionais e MongoDB para documentos, você usa apenas PostgreSQL.</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Menos infraestrutura, menos backup, menos monitoramento e menos complexidade.</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">---</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal"><strong class="font-bold text-[#191919]">2. ACID de verdade</strong></p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">PostgreSQL sempre teve um dos modelos de transação mais robustos do mercado.</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Quando várias operações precisam acontecer juntas, você tem garantias fortes de consistência.</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">---</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal"><strong class="font-bold text-[#191919]">3. JOINs continuam existindo</strong></p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Se amanhã parte do JSON virar uma tabela normal, basta fazer JOIN.</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Você não precisa migrar de tecnologia.</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">---</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal"><strong class="font-bold text-[#191919]">4. Índices eficientes</strong></p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">O PostgreSQL possui índices GIN para JSONB, permitindo consultas muito rápidas em documentos grandes.</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Você consegue pesquisar por chaves, valores e estruturas internas sem precisar percorrer o documento inteiro.</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">---</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal"><strong class="font-bold text-[#191919]">5. SQL continua sendo SQL</strong></p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Você pode combinar consultas relacionais com JSON na mesma instrução.</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Exemplo:</p>
 <pre class="font-mono text-xs bg-gray-900 text-gray-100 p-4 rounded-xl my-5 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>
 <span class="text-blue-400 font-bold">SELECT</span> nome
 <span class="text-blue-400 font-bold">FROM</span> usuarios
 <span class="text-blue-400 font-bold">WHERE</span> perfil-&gt;&gt;<span class="text-emerald-400">'tema'</span> = <span class="text-emerald-400">'dark'</span>
 <span class="text-blue-400 font-bold">AND</span> criado_em &gt;= <span class="text-blue-400 font-bold">CURRENT_DATE</span> - <span class="text-blue-400 font-bold">INTERVAL</span> '<span class="text-amber-400">30</span> days';
 </code></pre>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Essa flexibilidade é difícil de encontrar em bancos exclusivamente orientados a documentos.</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Essa flexibilidade é difícil de encontrar em bancos exclusivamente orientados a documentos.</p>
 <h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Então MongoDB ficou ruim?</h2>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Não.</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">MongoDB continua sendo uma excelente escolha para determinados cenários, principalmente quando praticamente todos os dados são documentos altamente flexíveis e a aplicação foi desenhada em torno desse modelo.</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">Mas para muitas aplicações web, APIs e sistemas corporativos, o PostgreSQL entrega o melhor dos dois mundos: dados relacionais e documentos JSON na mesma base.</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">O resultado costuma ser uma arquitetura mais simples, menos serviços para manter e uma curva de aprendizado menor para quem já trabalha com SQL.</p>
-<p class="text-xs md:text-sm text-[#5e5e5e] leading-relaxed mb-4 font-normal">No fim, a melhor tecnologia depende do problema. Só vale lembrar que, em 2026, escolher MongoDB apenas porque "precisa guardar JSON" já não é uma decisão tão óbvia quanto era alguns anos atrás.</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Não.</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">MongoDB continua sendo uma excelente escolha para determinados cenários, principalmente quando praticamente todos os dados são documentos altamente flexíveis e a aplicação foi desenhada em torno desse modelo.</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Mas para muitas aplicações web, APIs e sistemas corporativos, o PostgreSQL entrega o melhor dos dois mundos: dados relacionais e documentos JSON na mesma base.</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">O resultado costuma ser uma arquitetura mais simples, menos serviços para manter e uma curva de aprendizado menor para quem já trabalha com SQL.</p>
+<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">No fim, a melhor tecnologia depende do problema. Só vale lembrar que, em 2026, escolher MongoDB apenas porque "precisa guardar JSON" já não é uma decisão tão óbvia quanto era alguns anos atrás.</p>
       </div>
       
       <div class="border-t border-gray-100 mt-10 pt-6 flex justify-between items-center">
