@@ -2128,6 +2128,24 @@ Today, I leverage over a decade of independent experience optimizing web infrast
       }
     }
 
+    // Read query parameter to load correct language
+    const urlParams = new URLSearchParams(window.location.search);
+    const langParam = urlParams.get('lang')?.toLowerCase();
+    if (langParam === 'en') {
+      currentLang = 'en';
+      const ptElements = document.querySelectorAll('.lang-pt');
+      const enElements = document.querySelectorAll('.lang-en');
+      const btnText = document.getElementById('lang-btn-text');
+      
+      ptElements.forEach(el => el.classList.add('hidden'));
+      enElements.forEach(el => el.classList.remove('hidden'));
+      if (btnText) btnText.innerText = 'PT';
+      const toggleBtn = document.getElementById('lang-toggle-btn');
+      if (toggleBtn) toggleBtn.title = 'Mudar para Português';
+    } else {
+      currentLang = 'pt';
+    }
+
     updateBlogPagination();
     updateProjectsPagination();
 
