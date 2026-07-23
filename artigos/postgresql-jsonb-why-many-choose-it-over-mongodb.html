@@ -224,10 +224,10 @@
 <h3 class="text-base md:text-lg font-bold text-gray-900 mt-8 mb-3 leading-snug border-l-4 border-[#0a66c2] pl-3">What is JSONB?</h3>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">JSONB is a PostgreSQL data type that stores JSON documents in binary format.</p>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">In practice, this means:</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"><em class="italic text-gray-800"> fast queries on internal fields;</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"></em> indexing of JSON attributes;</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"><em class="italic text-gray-800"> full ACID transaction support;</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"></em> ability to mix relational data and documents in the same table.</p>
+<em class="italic text-gray-800"> fast queries on internal fields;
+</em> indexing of JSON attributes;
+<em class="italic text-gray-800"> full ACID transaction support;
+</em> ability to mix relational data and documents in the same table.
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Example:</p>
 <pre class="font-mono text-xs md:text-sm bg-gray-900 text-gray-100 p-4.5 rounded-xl my-6 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>
 <span class="text-blue-400 font-bold">CREATE TABLE</span> users (
@@ -254,23 +254,23 @@
 </code></pre>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Or even index this attribute to make it extremely fast.</p>
 <h3 class="text-base md:text-lg font-bold text-gray-900 mt-8 mb-3 leading-snug border-l-4 border-[#0a66c2] pl-3">Why can this be better than MongoDB?</h3>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"><strong class="font-bold text-gray-950">1. One database for everything</strong></p>
+<strong class="font-bold text-gray-950">1. One database for everything</strong>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Instead of maintaining PostgreSQL for relational data and MongoDB for documents, you use only PostgreSQL.</p>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Less infrastructure, less backup, less monitoring, and less complexity.</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">---</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"><strong class="font-bold text-gray-950">2. Real ACID</strong></p>
+<hr class="my-8 border-gray-200" />
+<strong class="font-bold text-gray-950">2. Real ACID</strong>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">PostgreSQL has always had one of the most robust transaction models on the market.</p>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">When multiple operations need to happen together, you have strong consistency guarantees.</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">---</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"><strong class="font-bold text-gray-950">3. JOINs still exist</strong></p>
+<hr class="my-8 border-gray-200" />
+<strong class="font-bold text-gray-950">3. JOINs still exist</strong>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">If tomorrow part of your JSON becomes a normal table, you just do a JOIN.</p>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">You don't need to migrate technology.</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">---</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"><strong class="font-bold text-gray-950">4. Efficient indexes</strong></p>
+<hr class="my-8 border-gray-200" />
+<strong class="font-bold text-gray-950">4. Efficient indexes</strong>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">PostgreSQL has GIN indexes for JSONB, allowing very fast queries on large documents.</p>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">You can search by keys, values, and internal structures without having to traverse the entire document.</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">---</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"><strong class="font-bold text-gray-950">5. SQL is still SQL</strong></p>
+<hr class="my-8 border-gray-200" />
+<strong class="font-bold text-gray-950">5. SQL is still SQL</strong>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">You can combine relational queries with JSON in the same statement.</p>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Example:</p>
 <pre class="font-mono text-xs md:text-sm bg-gray-900 text-gray-100 p-4.5 rounded-xl my-6 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>

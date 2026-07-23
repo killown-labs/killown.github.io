@@ -224,10 +224,10 @@
 <h3 class="text-base md:text-lg font-bold text-gray-900 mt-8 mb-3 leading-snug border-l-4 border-[#0a66c2] pl-3">O que é JSONB?</h3>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">O JSONB é um tipo de dado do PostgreSQL que armazena documentos JSON em formato binário.</p>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Na prática isso significa:</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"><em class="italic text-gray-800"> consultas rápidas em campos internos;</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"></em> indexação dos atributos do JSON;</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"><em class="italic text-gray-800"> suporte completo a transações (ACID);</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"></em> possibilidade de misturar dados relacionais e documentos na mesma tabela.</p>
+<em class="italic text-gray-800"> consultas rápidas em campos internos;
+</em> indexação dos atributos do JSON;
+<em class="italic text-gray-800"> suporte completo a transações (ACID);
+</em> possibilidade de misturar dados relacionais e documentos na mesma tabela.
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Exemplo:</p>
 <pre class="font-mono text-xs md:text-sm bg-gray-900 text-gray-100 p-4.5 rounded-xl my-6 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>
 <span class="text-blue-400 font-bold">CREATE TABLE</span> usuarios (
@@ -254,23 +254,23 @@
 </code></pre>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Ou até indexar esse atributo para ficar extremamente rápido.</p>
 <h3 class="text-base md:text-lg font-bold text-gray-900 mt-8 mb-3 leading-snug border-l-4 border-[#0a66c2] pl-3">Por que isso pode ser melhor que MongoDB?</h3>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"><strong class="font-bold text-gray-950">1. Um banco para tudo</strong></p>
+<strong class="font-bold text-gray-950">1. Um banco para tudo</strong>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Em vez de manter PostgreSQL para dados relacionais e MongoDB para documentos, você usa apenas PostgreSQL.</p>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Menos infraestrutura, menos backup, menos monitoramento e menos complexidade.</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">---</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"><strong class="font-bold text-gray-950">2. ACID de verdade</strong></p>
+<hr class="my-8 border-gray-200" />
+<strong class="font-bold text-gray-950">2. ACID de verdade</strong>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">PostgreSQL sempre teve um dos modelos de transação mais robustos do mercado.</p>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Quando várias operações precisam acontecer juntas, você tem garantias fortes de consistência.</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">---</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"><strong class="font-bold text-gray-950">3. JOINs continuam existindo</strong></p>
+<hr class="my-8 border-gray-200" />
+<strong class="font-bold text-gray-950">3. JOINs continuam existindo</strong>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Se amanhã parte do JSON virar uma tabela normal, basta fazer JOIN.</p>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Você não precisa migrar de tecnologia.</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">---</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"><strong class="font-bold text-gray-950">4. Índices eficientes</strong></p>
+<hr class="my-8 border-gray-200" />
+<strong class="font-bold text-gray-950">4. Índices eficientes</strong>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">O PostgreSQL possui índices GIN para JSONB, permitindo consultas muito rápidas em documentos grandes.</p>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Você consegue pesquisar por chaves, valores e estruturas internas sem precisar percorrer o documento inteiro.</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">---</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"><strong class="font-bold text-gray-950">5. SQL continua sendo SQL</strong></p>
+<hr class="my-8 border-gray-200" />
+<strong class="font-bold text-gray-950">5. SQL continua sendo SQL</strong>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Você pode combinar consultas relacionais com JSON na mesma instrução.</p>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Exemplo:</p>
 <pre class="font-mono text-xs md:text-sm bg-gray-900 text-gray-100 p-4.5 rounded-xl my-6 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>

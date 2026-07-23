@@ -37,6 +37,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thiagolucio.tech/artigos/a-inflacao-do-corporatives-por-que-codar-ficou-mais-facil-do-que-conversar-sobre-tecnologia.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thiagolucio.tech/artigos/why-i-chose-rust-for-building-linux-system-tools.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -56,6 +62,12 @@
   </url>
   <url>
     <loc>https://thiagolucio.tech/artigos/the-uberization-of-companies-by-ai-when-your-business-works-for-big-tech.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thiagolucio.tech/artigos/corporate-jargon-inflation-why-coding-became-easier-than-talking-about-tech.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
