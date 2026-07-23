@@ -42,33 +42,61 @@
 
   <!-- Structured Data JSON-LD Schema -->
   <script type="application/ld+json">
-    {
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://thiagolucio.tech/artigos/por-que-escolhi-rust-para-construir-ferramentas-de-sistemas-linux.html"
+    [
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://thiagolucio.tech/artigos/por-que-escolhi-rust-para-construir-ferramentas-de-sistemas-linux.html"
+    },
+    "headline": "Por que escolhi Rust para construir ferramentas de sistemas Linux",
+    "description": "Minha experiência desenvolvendo o Flux, um gerenciador de arquivos rápido com GTK4, e os benefícios da segurança de memória e concorrência garantidas pelo compilador Rust.",
+    "image": "https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=1200&q=80",
+    "datePublished": "2026-07-10",
+    "dateModified": "2026-07-10",
+    "wordCount": 548,
+    "author": {
+      "@type": "Person",
+      "name": "Thiago Lúcio",
+      "url": "https://thiagolucio.tech",
+      "jobTitle": "Software Engineer"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Thiago Lúcio",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://thiagolucio.tech/favicon.svg"
+      }
+    },
+    "keywords": "Rust, Linux, GTK4, Relm4, Systems Programming, Concurrency, Memory Safety, Thiago Lúcio, Software Engineer, Diário Dev, Open Source"
   },
-  "headline": "Por que escolhi Rust para construir ferramentas de sistemas Linux",
-  "description": "Minha experiência desenvolvendo o Flux, um gerenciador de arquivos rápido com GTK4, e os benefícios da segurança de memória e concorrência garantidas pelo compilador Rust.",
-  "image": "https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=1200&q=80",
-  "datePublished": "2026-07-10",
-  "dateModified": "2026-07-10",
-  "author": {
-    "@type": "Person",
-    "name": "Thiago Lúcio",
-    "url": "https://thiagolucio.tech"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Thiago Lúcio",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://thiagolucio.tech/favicon.svg"
-    }
-  },
-  "keywords": "Rust, Linux, GTK4, Relm4, Systems Programming, Concurrency, Memory Safety, Thiago Lúcio, Software Engineer, Diário Dev, Open Source"
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://thiagolucio.tech"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Artigos",
+        "item": "https://thiagolucio.tech/#publicacoes"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Por que escolhi Rust para construir ferramentas de sistemas Linux",
+        "item": "https://thiagolucio.tech/artigos/por-que-escolhi-rust-para-construir-ferramentas-de-sistemas-linux.html"
+      }
+    ]
+  }
+]
   </script>
 
   <!-- Speed Optimizations: DNS Prefetch & Preconnect -->
@@ -151,50 +179,98 @@
 
   <!-- Main Article Container -->
   <main class="max-w-3xl mx-auto px-4 py-8">
-    <article class="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-sm" itemscope itemtype="https://schema.org/TechArticle">
-      <div class="flex items-center gap-2 mb-4">
-        <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-sky-50 text-[#0a66c2] uppercase tracking-wider">Rust / Systems</span>
-        <span class="text-xs text-gray-600 font-semibold">10 de Julho, 2026</span>
+    <!-- Breadcrumb for SEO -->
+    <nav aria-label="Breadcrumb" class="mb-5 text-xs text-gray-500 flex items-center gap-1.5 flex-wrap">
+      <a href="../index.html" class="hover:text-[#0a66c2] transition-colors">Início</a>
+      <span>/</span>
+      <a href="../index.html#publicacoes" class="hover:text-[#0a66c2] transition-colors">Artigos</a>
+      <span>/</span>
+      <span class="text-gray-700 font-medium truncate max-w-xs sm:max-w-md" aria-current="page">Por que escolhi Rust para construir ferramentas de sistemas Linux</span>
+    </nav>
+
+    <article class="bg-white border border-gray-200/90 rounded-2xl p-6 sm:p-8 md:p-10 shadow-sm leading-relaxed" itemscope itemtype="https://schema.org/TechArticle">
+      <!-- Article Header Meta -->
+      <header class="mb-8">
+        <div class="flex flex-wrap items-center gap-2.5 mb-4">
+          <span class="text-[11px] font-extrabold px-3 py-1 rounded-full bg-blue-50 text-[#0a66c2] border border-blue-100 uppercase tracking-wider">Rust / Systems</span>
+          <span class="text-xs text-gray-600 font-medium flex items-center gap-1">
+            <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            <time datetime="2026-07-10">10 de Julho, 2026</time>
+          </span>
+          <span class="text-gray-300">&bull;</span>
+          <span class="text-xs text-gray-600 font-medium flex items-center gap-1">
+            <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            3 min de leitura
+          </span>
+        </div>
+        
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-950 tracking-tight mb-5 leading-snug sm:leading-tight" itemprop="headline">Por que escolhi Rust para construir ferramentas de sistemas Linux</h1>
+        
+        <!-- Key Summary Excerpt Callout -->
+        <div class="p-4 sm:p-5 rounded-xl bg-gradient-to-r from-blue-50/60 to-gray-50 border-l-4 border-[#0a66c2] text-sm sm:text-base text-gray-800 font-medium leading-relaxed shadow-xs">
+          Minha experiência desenvolvendo o Flux, um gerenciador de arquivos rápido com GTK4, e os benefícios da segurança de memória e concorrência garantidas pelo compilador Rust.
+        </div>
+      </header>
+      
+      <div class="border-b border-gray-150 mb-8"></div>
+      
+      <!-- Article Content Body -->
+      <div class="article-body space-y-4 text-gray-800" itemprop="articleBody">
+        <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Construir ferramentas de sistema sempre foi uma tarefa dominada por C e C++. Durante décadas, essas linguagens ofereceram desempenho praticamente imbatível e acesso direto ao hardware. O problema é que esse poder vem acompanhado de uma responsabilidade enorme: gerenciar memória manualmente, evitar segmentation faults, impedir buffer overflows e garantir que múltiplas threads não acessem os mesmos dados de forma incorreta.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Em projetos pequenos isso pode ser administrável. Em aplicações maiores, porém, a complexidade cresce rapidamente e boa parte do tempo acaba sendo investida na prevenção de bugs difíceis de reproduzir.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Foi exatamente por isso que escolhi Rust.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Rust entrega desempenho equivalente ao de C e C++, mas adiciona um sistema de propriedade (ownership) e empréstimos (borrowing) que elimina uma classe inteira de erros em tempo de compilação. Em vez de descobrir um problema de memória depois que o programa está em produção, o compilador simplesmente impede que aquele código seja compilado.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Esse modelo muda completamente a forma de desenvolver software de baixo nível.</p>
+<h3 class="text-base md:text-lg font-bold text-gray-900 mt-8 mb-3 leading-snug border-l-4 border-[#0a66c2] pl-3">O projeto Flux</h3>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">No desenvolvimento do Flux, meu gerenciador de arquivos para Linux escrito em Rust utilizando GTK4 e Relm4, percebi rapidamente como essas garantias fazem diferença.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Enquanto implementava operações de leitura de diretórios, monitoramento do sistema de arquivos e atualização da interface gráfica, pude focar na lógica da aplicação sem a preocupação constante com ponteiros inválidos, use-after-free ou data races.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Isso não significa que Rust elimina toda a complexidade. Existe uma curva de aprendizado considerável, principalmente para compreender o sistema de ownership. Porém, depois que esses conceitos fazem sentido, eles deixam de ser um obstáculo e passam a funcionar como um excelente revisor de código trabalhando em tempo integral.</p>
+<h3 class="text-base md:text-lg font-bold text-gray-900 mt-8 mb-3 leading-snug border-l-4 border-[#0a66c2] pl-3">O que aprendi com GTK4 e Relm4</h3>
+<h3 class="text-base md:text-lg font-bold text-gray-900 mt-8 mb-3 leading-snug border-l-4 border-[#0a66c2] pl-3">Arquitetura reativa</h3>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">O Relm4 utiliza uma arquitetura baseada em estado que torna o código muito organizado.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">A interface deixa de ser um conjunto de callbacks espalhados e passa a reagir automaticamente às mudanças de estado da aplicação. Para quem já trabalhou com React, Vue ou Elm, a filosofia é bastante familiar.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Essa separação entre estado, mensagens e atualização da interface facilita bastante a manutenção conforme o projeto cresce.</p>
+<h3 class="text-base md:text-lg font-bold text-gray-900 mt-8 mb-3 leading-snug border-l-4 border-[#0a66c2] pl-3">Concorrência sem medo</h3>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Outra característica que me chamou atenção foi a facilidade para paralelizar tarefas.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Operações potencialmente demoradas, como listar diretórios contendo milhares de arquivos, podem ser executadas em threads separadas mantendo a interface responsiva.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">O mais interessante é que o compilador impede diversos tipos de erros de concorrência antes mesmo da aplicação ser executada. Isso reduz drasticamente a chance de encontrar aqueles bugs intermitentes que aparecem apenas em determinadas condições.</p>
+<h3 class="text-base md:text-lg font-bold text-gray-900 mt-8 mb-3 leading-snug border-l-4 border-[#0a66c2] pl-3">Vale a pena aprender Rust?</h3>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Na minha opinião, sim.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Rust não é a linguagem mais simples para começar. O compilador é exigente e, no início, pode parecer que ele está "brigando" com você o tempo todo.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Depois de algum tempo, porém, fica claro que essa rigidez existe justamente para evitar problemas que, em outras linguagens, poderiam aparecer apenas meses depois em produção.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Para quem desenvolve ferramentas de sistema, aplicações para Linux, utilitários de linha de comando, servidores ou qualquer software onde desempenho e confiabilidade são importantes, Rust oferece uma combinação difícil de encontrar em outras linguagens: velocidade, segurança de memória e concorrência segura, tudo sem depender de um coletor de lixo (garbage collector).</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Hoje, para esse tipo de projeto, dificilmente eu escolheria outra linguagem.</p>
       </div>
-      
-      <h1 class="text-2xl md:text-3xl font-extrabold text-[#191919] tracking-tight mb-6 leading-tight" itemprop="headline">Por que escolhi Rust para construir ferramentas de sistemas Linux</h1>
-      
-      <div class="border-b border-gray-100 mb-6"></div>
-      
-      <!-- Article Content -->
-      <div class="space-y-4 text-gray-700 font-normal" itemprop="articleBody">
-        <p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Construir ferramentas de sistema sempre foi uma tarefa dominada por C e C++. Durante décadas, essas linguagens ofereceram desempenho praticamente imbatível e acesso direto ao hardware. O problema é que esse poder vem acompanhado de uma responsabilidade enorme: gerenciar memória manualmente, evitar segmentation faults, impedir buffer overflows e garantir que múltiplas threads não acessem os mesmos dados de forma incorreta.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Em projetos pequenos isso pode ser administrável. Em aplicações maiores, porém, a complexidade cresce rapidamente e boa parte do tempo acaba sendo investida na prevenção de bugs difíceis de reproduzir.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Foi exatamente por isso que escolhi Rust.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Rust entrega desempenho equivalente ao de C e C++, mas adiciona um sistema de propriedade (ownership) e empréstimos (borrowing) que elimina uma classe inteira de erros em tempo de compilação. Em vez de descobrir um problema de memória depois que o programa está em produção, o compilador simplesmente impede que aquele código seja compilado.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Esse modelo muda completamente a forma de desenvolver software de baixo nível.</p>
-<h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">O projeto Flux</h2>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">No desenvolvimento do Flux, meu gerenciador de arquivos para Linux escrito em Rust utilizando GTK4 e Relm4, percebi rapidamente como essas garantias fazem diferença.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Enquanto implementava operações de leitura de diretórios, monitoramento do sistema de arquivos e atualização da interface gráfica, pude focar na lógica da aplicação sem a preocupação constante com ponteiros inválidos, use-after-free ou data races.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Isso não significa que Rust elimina toda a complexidade. Existe uma curva de aprendizado considerável, principalmente para compreender o sistema de ownership. Porém, depois que esses conceitos fazem sentido, eles deixam de ser um obstáculo e passam a funcionar como um excelente revisor de código trabalhando em tempo integral.</p>
-<h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">O que aprendi com GTK4 e Relm4</h2>
-<h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Arquitetura reativa</h2>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">O Relm4 utiliza uma arquitetura baseada em estado que torna o código muito organizado.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">A interface deixa de ser um conjunto de callbacks espalhados e passa a reagir automaticamente às mudanças de estado da aplicação. Para quem já trabalhou com React, Vue ou Elm, a filosofia é bastante familiar.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Essa separação entre estado, mensagens e atualização da interface facilita bastante a manutenção conforme o projeto cresce.</p>
-<h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Concorrência sem medo</h2>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Outra característica que me chamou atenção foi a facilidade para paralelizar tarefas.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Operações potencialmente demoradas, como listar diretórios contendo milhares de arquivos, podem ser executadas em threads separadas mantendo a interface responsiva.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">O mais interessante é que o compilador impede diversos tipos de erros de concorrência antes mesmo da aplicação ser executada. Isso reduz drasticamente a chance de encontrar aqueles bugs intermitentes que aparecem apenas em determinadas condições.</p>
-<h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Vale a pena aprender Rust?</h2>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Na minha opinião, sim.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Rust não é a linguagem mais simples para começar. O compilador é exigente e, no início, pode parecer que ele está "brigando" com você o tempo todo.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Depois de algum tempo, porém, fica claro que essa rigidez existe justamente para evitar problemas que, em outras linguagens, poderiam aparecer apenas meses depois em produção.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Para quem desenvolve ferramentas de sistema, aplicações para Linux, utilitários de linha de comando, servidores ou qualquer software onde desempenho e confiabilidade são importantes, Rust oferece uma combinação difícil de encontrar em outras linguagens: velocidade, segurança de memória e concorrência segura, tudo sem depender de um coletor de lixo (garbage collector).</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Hoje, para esse tipo de projeto, dificilmente eu escolheria outra linguagem.</p>
-      </div>
-      
-      <div class="border-t border-gray-100 mt-10 pt-6 flex justify-between items-center">
+
+      <!-- Author Bio Section for E-E-A-T SEO -->
+      <section class="mt-12 pt-8 border-t border-gray-150" aria-label="Sobre o Autor">
+        <div class="p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-blue-50/30 border border-gray-150 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <div class="w-14 h-14 rounded-2xl bg-[#0a66c2] text-white flex items-center justify-center font-black text-xl shrink-0 shadow-sm">
+            TL
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2">
+              <h3 class="text-sm font-bold text-gray-950">Thiago Lúcio</h3>
+              <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-gray-200/70 text-gray-700">Autor & Desenvolvedor</span>
+            </div>
+            <p class="text-xs text-gray-600 mt-1 leading-relaxed">
+              Engenheiro de Software focado em arquitetura de sistemas, desenvolvimento web de alta performance e estratégia de tecnologia.
+            </p>
+          </div>
+          <a href="https://linkedin.com/in/thiagolucio" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-[#0a66c2] hover:bg-blue-100/60 px-3.5 py-2 rounded-xl border border-blue-200/80 transition-colors shrink-0 flex items-center gap-1.5 shadow-xs">
+            <span>LinkedIn</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- Article Navigation Footer -->
+      <footer class="mt-8 pt-6 border-t border-gray-150 flex flex-col sm:flex-row justify-between items-center gap-4">
         <a href="../index.html" class="text-xs font-bold text-[#0a66c2] hover:text-[#004182] hover:underline flex items-center gap-1.5">
-          &larr; Voltar para o início
+          &larr; Voltar para o Portfólio
         </a>
-        <span class="text-[10px] text-gray-600 font-medium">Thiago Lúcio &bull; Diário Dev</span>
-      </div>
+        <span class="text-xs text-gray-600 font-medium">Thiago Lúcio &bull; Diário Dev</span>
+      </footer>
     </article>
   </main>
 

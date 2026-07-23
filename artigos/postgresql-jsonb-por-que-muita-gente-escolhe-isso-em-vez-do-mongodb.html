@@ -42,33 +42,61 @@
 
   <!-- Structured Data JSON-LD Schema -->
   <script type="application/ld+json">
-    {
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://thiagolucio.tech/artigos/postgresql-jsonb-por-que-muita-gente-escolhe-isso-em-vez-do-mongodb.html"
+    [
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://thiagolucio.tech/artigos/postgresql-jsonb-por-que-muita-gente-escolhe-isso-em-vez-do-mongodb.html"
+    },
+    "headline": "PostgreSQL + JSONB: por que muita gente escolhe isso em vez do MongoDB",
+    "description": "Quando alguém precisa armazenar documentos JSON, a primeira opção que costuma vir à cabeça é o MongoDB. Mas hoje o PostgreSQL com JSONB resolve isso de forma tão eficiente que não faz sentido adicionar outro banco.",
+    "image": "https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=1200&q=80",
+    "datePublished": "2026-07-19",
+    "dateModified": "2026-07-19",
+    "wordCount": 439,
+    "author": {
+      "@type": "Person",
+      "name": "Thiago Lúcio",
+      "url": "https://thiagolucio.tech",
+      "jobTitle": "Software Engineer"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Thiago Lúcio",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://thiagolucio.tech/favicon.svg"
+      }
+    },
+    "keywords": "PostgreSQL, JSONB, MongoDB, SQL, Database, NoSQL, GIN Indexes, Relational Database, ACID Transactions, Thiago Lúcio, Software Engineer, Diário Dev, Tech Blog"
   },
-  "headline": "PostgreSQL + JSONB: por que muita gente escolhe isso em vez do MongoDB",
-  "description": "Quando alguém precisa armazenar documentos JSON, a primeira opção que costuma vir à cabeça é o MongoDB. Mas hoje o PostgreSQL com JSONB resolve isso de forma tão eficiente que não faz sentido adicionar outro banco.",
-  "image": "https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=1200&q=80",
-  "datePublished": "2026-07-19",
-  "dateModified": "2026-07-19",
-  "author": {
-    "@type": "Person",
-    "name": "Thiago Lúcio",
-    "url": "https://thiagolucio.tech"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Thiago Lúcio",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://thiagolucio.tech/favicon.svg"
-    }
-  },
-  "keywords": "PostgreSQL, JSONB, MongoDB, SQL, Database, NoSQL, GIN Indexes, Relational Database, ACID Transactions, Thiago Lúcio, Software Engineer, Diário Dev, Tech Blog"
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://thiagolucio.tech"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Artigos",
+        "item": "https://thiagolucio.tech/#publicacoes"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "PostgreSQL + JSONB: por que muita gente escolhe isso em vez do MongoDB",
+        "item": "https://thiagolucio.tech/artigos/postgresql-jsonb-por-que-muita-gente-escolhe-isso-em-vez-do-mongodb.html"
+      }
+    ]
+  }
+]
   </script>
 
   <!-- Speed Optimizations: DNS Prefetch & Preconnect -->
@@ -151,36 +179,61 @@
 
   <!-- Main Article Container -->
   <main class="max-w-3xl mx-auto px-4 py-8">
-    <article class="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-sm" itemscope itemtype="https://schema.org/TechArticle">
-      <div class="flex items-center gap-2 mb-4">
-        <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-sky-50 text-[#0a66c2] uppercase tracking-wider">PostgreSQL / Database</span>
-        <span class="text-xs text-gray-600 font-semibold">19 de Julho, 2026</span>
-      </div>
+    <!-- Breadcrumb for SEO -->
+    <nav aria-label="Breadcrumb" class="mb-5 text-xs text-gray-500 flex items-center gap-1.5 flex-wrap">
+      <a href="../index.html" class="hover:text-[#0a66c2] transition-colors">Início</a>
+      <span>/</span>
+      <a href="../index.html#publicacoes" class="hover:text-[#0a66c2] transition-colors">Artigos</a>
+      <span>/</span>
+      <span class="text-gray-700 font-medium truncate max-w-xs sm:max-w-md" aria-current="page">PostgreSQL + JSONB: por que muita gente escolhe isso em vez do MongoDB</span>
+    </nav>
+
+    <article class="bg-white border border-gray-200/90 rounded-2xl p-6 sm:p-8 md:p-10 shadow-sm leading-relaxed" itemscope itemtype="https://schema.org/TechArticle">
+      <!-- Article Header Meta -->
+      <header class="mb-8">
+        <div class="flex flex-wrap items-center gap-2.5 mb-4">
+          <span class="text-[11px] font-extrabold px-3 py-1 rounded-full bg-blue-50 text-[#0a66c2] border border-blue-100 uppercase tracking-wider">PostgreSQL / Database</span>
+          <span class="text-xs text-gray-600 font-medium flex items-center gap-1">
+            <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            <time datetime="2026-07-19">19 de Julho, 2026</time>
+          </span>
+          <span class="text-gray-300">&bull;</span>
+          <span class="text-xs text-gray-600 font-medium flex items-center gap-1">
+            <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            3 min de leitura
+          </span>
+        </div>
+        
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-950 tracking-tight mb-5 leading-snug sm:leading-tight" itemprop="headline">PostgreSQL + JSONB: por que muita gente escolhe isso em vez do MongoDB</h1>
+        
+        <!-- Key Summary Excerpt Callout -->
+        <div class="p-4 sm:p-5 rounded-xl bg-gradient-to-r from-blue-50/60 to-gray-50 border-l-4 border-[#0a66c2] text-sm sm:text-base text-gray-800 font-medium leading-relaxed shadow-xs">
+          Quando alguém precisa armazenar documentos JSON, a primeira opção que costuma vir à cabeça é o MongoDB. Mas hoje o PostgreSQL com JSONB resolve isso de forma tão eficiente que não faz sentido adicionar outro banco.
+        </div>
+      </header>
       
-      <h1 class="text-2xl md:text-3xl font-extrabold text-[#191919] tracking-tight mb-6 leading-tight" itemprop="headline">PostgreSQL + JSONB: por que muita gente escolhe isso em vez do MongoDB</h1>
+      <div class="border-b border-gray-150 mb-8"></div>
       
-      <div class="border-b border-gray-100 mb-6"></div>
-      
-      <!-- Article Content -->
-      <div class="space-y-4 text-gray-700 font-normal" itemprop="articleBody">
-        <p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Quando alguém precisa armazenar documentos JSON, a primeira opção que costuma vir à cabeça é o MongoDB.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Mas hoje o PostgreSQL, usando <strong class="font-bold text-[#191919]">JSONB</strong>, resolve esse problema de forma tão eficiente que, em muitos projetos, não faz sentido adicionar outro banco apenas para isso.</p>
-<h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">O que é JSONB?</h2>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">O JSONB é um tipo de dado do PostgreSQL que armazena documentos JSON em formato binário.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Na prática isso significa:</p>
-<ul class="list-disc pl-5 space-y-2 my-4 text-xs md:text-sm text-gray-700 font-normal"><li class="pl-1">consultas rápidas em campos internos;</li>
-<li class="pl-1">indexação dos atributos do JSON;</li>
-<li class="pl-1">suporte completo a transações (ACID);</li>
-<li class="pl-1">possibilidade de misturar dados relacionais e documentos na mesma tabela.</li>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Exemplo:</p>
-<pre class="font-mono text-xs bg-gray-900 text-gray-100 p-4 rounded-xl my-5 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>
+      <!-- Article Content Body -->
+      <div class="article-body space-y-4 text-gray-800" itemprop="articleBody">
+        <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Quando alguém precisa armazenar documentos JSON, a primeira opção que costuma vir à cabeça é o MongoDB.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Mas hoje o PostgreSQL, usando <strong class="font-bold text-gray-950">JSONB</strong>, resolve esse problema de forma tão eficiente que, em muitos projetos, não faz sentido adicionar outro banco apenas para isso.</p>
+<h3 class="text-base md:text-lg font-bold text-gray-900 mt-8 mb-3 leading-snug border-l-4 border-[#0a66c2] pl-3">O que é JSONB?</h3>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">O JSONB é um tipo de dado do PostgreSQL que armazena documentos JSON em formato binário.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Na prática isso significa:</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"><em class="italic text-gray-800"> consultas rápidas em campos internos;</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"></em> indexação dos atributos do JSON;</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"><em class="italic text-gray-800"> suporte completo a transações (ACID);</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"></em> possibilidade de misturar dados relacionais e documentos na mesma tabela.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Exemplo:</p>
+<pre class="font-mono text-xs md:text-sm bg-gray-900 text-gray-100 p-4.5 rounded-xl my-6 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>
 <span class="text-blue-400 font-bold">CREATE TABLE</span> usuarios (
     id <span class="text-blue-400 font-bold">SERIAL</span> <span class="text-blue-400 font-bold">PRIMARY KEY</span>,
     nome <span class="text-blue-400 font-bold">TEXT</span>,
     perfil <span class="text-blue-400 font-bold">JSONB</span>
 );
 </code></pre>
-<pre class="font-mono text-xs bg-gray-900 text-gray-100 p-4 rounded-xl my-5 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>
+<pre class="font-mono text-xs md:text-sm bg-gray-900 text-gray-100 p-4.5 rounded-xl my-6 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>
 {
   <span class="text-sky-300 font-medium">"tema"</span>: <span class="text-emerald-400">"dark"</span>,
   <span class="text-sky-300 font-medium">"notificacoes"</span>: <span class="text-purple-400 font-bold">true</span>,
@@ -190,54 +243,77 @@
   }
 }
 </code></pre>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Você pode consultar qualquer campo:</p>
-<pre class="font-mono text-xs bg-gray-900 text-gray-100 p-4 rounded-xl my-5 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Você pode consultar qualquer campo:</p>
+<pre class="font-mono text-xs md:text-sm bg-gray-900 text-gray-100 p-4.5 rounded-xl my-6 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>
 <span class="text-blue-400 font-bold">SELECT</span> *
 <span class="text-blue-400 font-bold">FROM</span> usuarios
 <span class="text-blue-400 font-bold">WHERE</span> perfil-&gt;&gt;<span class="text-emerald-400">'tema'</span> = <span class="text-emerald-400">'dark'</span>;
 </code></pre>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Ou até indexar esse atributo para ficar extremamente rápido.</p>
-<h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Por que isso pode ser melhor que MongoDB?</h2>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal"><strong class="font-bold text-[#191919]">1. Um banco para tudo</strong></p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Em vez de manter PostgreSQL para dados relacionais e MongoDB para documentos, você usa apenas PostgreSQL.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Menos infraestrutura, menos backup, menos monitoramento e menos complexidade.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">---</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal"><strong class="font-bold text-[#191919]">2. ACID de verdade</strong></p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">PostgreSQL sempre teve um dos modelos de transação mais robustos do mercado.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Quando várias operações precisam acontecer juntas, você tem garantias fortes de consistência.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">---</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal"><strong class="font-bold text-[#191919]">3. JOINs continuam existindo</strong></p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Se amanhã parte do JSON virar uma tabela normal, basta fazer JOIN.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Você não precisa migrar de tecnologia.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">---</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal"><strong class="font-bold text-[#191919]">4. Índices eficientes</strong></p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">O PostgreSQL possui índices GIN para JSONB, permitindo consultas muito rápidas em documentos grandes.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Você consegue pesquisar por chaves, valores e estruturas internas sem precisar percorrer o documento inteiro.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">---</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal"><strong class="font-bold text-[#191919]">5. SQL continua sendo SQL</strong></p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Você pode combinar consultas relacionais com JSON na mesma instrução.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Exemplo:</p>
-<pre class="font-mono text-xs bg-gray-900 text-gray-100 p-4 rounded-xl my-5 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Ou até indexar esse atributo para ficar extremamente rápido.</p>
+<h3 class="text-base md:text-lg font-bold text-gray-900 mt-8 mb-3 leading-snug border-l-4 border-[#0a66c2] pl-3">Por que isso pode ser melhor que MongoDB?</h3>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"><strong class="font-bold text-gray-950">1. Um banco para tudo</strong></p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Em vez de manter PostgreSQL para dados relacionais e MongoDB para documentos, você usa apenas PostgreSQL.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Menos infraestrutura, menos backup, menos monitoramento e menos complexidade.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">---</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"><strong class="font-bold text-gray-950">2. ACID de verdade</strong></p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">PostgreSQL sempre teve um dos modelos de transação mais robustos do mercado.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Quando várias operações precisam acontecer juntas, você tem garantias fortes de consistência.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">---</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"><strong class="font-bold text-gray-950">3. JOINs continuam existindo</strong></p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Se amanhã parte do JSON virar uma tabela normal, basta fazer JOIN.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Você não precisa migrar de tecnologia.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">---</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"><strong class="font-bold text-gray-950">4. Índices eficientes</strong></p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">O PostgreSQL possui índices GIN para JSONB, permitindo consultas muito rápidas em documentos grandes.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Você consegue pesquisar por chaves, valores e estruturas internas sem precisar percorrer o documento inteiro.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">---</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal"><strong class="font-bold text-gray-950">5. SQL continua sendo SQL</strong></p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Você pode combinar consultas relacionais com JSON na mesma instrução.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Exemplo:</p>
+<pre class="font-mono text-xs md:text-sm bg-gray-900 text-gray-100 p-4.5 rounded-xl my-6 overflow-x-auto block border border-gray-800 shadow-inner select-text"><code>
 <span class="text-blue-400 font-bold">SELECT</span> nome
 <span class="text-blue-400 font-bold">FROM</span> usuarios
 <span class="text-blue-400 font-bold">WHERE</span> perfil-&gt;&gt;<span class="text-emerald-400">'tema'</span> = <span class="text-emerald-400">'dark'</span>
 <span class="text-blue-400 font-bold">AND</span> criado_em &gt;= <span class="text-blue-400 font-bold">CURRENT_DATE</span> - <span class="text-blue-400 font-bold">INTERVAL</span> '<span class="text-amber-400">30</span> days';
 </code></pre>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Essa flexibilidade é difícil de encontrar em bancos exclusivamente orientados a documentos.</p>
-<h2 class="text-base font-extrabold text-[#191919] mt-6 mb-3 leading-tight">Então MongoDB ficou ruim?</h2>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Não.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">MongoDB continua sendo uma excelente escolha para determinados cenários, principalmente quando praticamente todos os dados são documentos altamente flexíveis e a aplicação foi desenhada em torno desse modelo.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">Mas para muitas aplicações web, APIs e sistemas corporativos, o PostgreSQL entrega o melhor dos dois mundos: dados relacionais e documentos JSON na mesma base.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">O resultado costuma ser uma arquitetura mais simples, menos serviços para manter e uma curva de aprendizado menor para quem já trabalha com SQL.</p>
-<p class="text-xs md:text-sm text-[#4b5563] leading-relaxed mb-4 font-normal">No fim, a melhor tecnologia depende do problema. Só vale lembrar que, em 2026, escolher MongoDB apenas porque "precisa guardar JSON" já não é uma decisão tão óbvia quanto era alguns anos atrás.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Essa flexibilidade é difícil de encontrar em bancos exclusivamente orientados a documentos.</p>
+<h3 class="text-base md:text-lg font-bold text-gray-900 mt-8 mb-3 leading-snug border-l-4 border-[#0a66c2] pl-3">Então MongoDB ficou ruim?</h3>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Não.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">MongoDB continua sendo uma excelente escolha para determinados cenários, principalmente quando praticamente todos os dados são documentos altamente flexíveis e a aplicação foi desenhada em torno desse modelo.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Mas para muitas aplicações web, APIs e sistemas corporativos, o PostgreSQL entrega o melhor dos dois mundos: dados relacionais e documentos JSON na mesma base.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">O resultado costuma ser uma arquitetura mais simples, menos serviços para manter e uma curva de aprendizado menor para quem já trabalha com SQL.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">No fim, a melhor tecnologia depende do problema. Só vale lembrar que, em 2026, escolher MongoDB apenas porque "precisa guardar JSON" já não é uma decisão tão óbvia quanto era alguns anos atrás.</p>
       </div>
-      
-      <div class="border-t border-gray-100 mt-10 pt-6 flex justify-between items-center">
+
+      <!-- Author Bio Section for E-E-A-T SEO -->
+      <section class="mt-12 pt-8 border-t border-gray-150" aria-label="Sobre o Autor">
+        <div class="p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-blue-50/30 border border-gray-150 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <div class="w-14 h-14 rounded-2xl bg-[#0a66c2] text-white flex items-center justify-center font-black text-xl shrink-0 shadow-sm">
+            TL
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2">
+              <h3 class="text-sm font-bold text-gray-950">Thiago Lúcio</h3>
+              <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-gray-200/70 text-gray-700">Autor & Desenvolvedor</span>
+            </div>
+            <p class="text-xs text-gray-600 mt-1 leading-relaxed">
+              Engenheiro de Software focado em arquitetura de sistemas, desenvolvimento web de alta performance e estratégia de tecnologia.
+            </p>
+          </div>
+          <a href="https://linkedin.com/in/thiagolucio" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-[#0a66c2] hover:bg-blue-100/60 px-3.5 py-2 rounded-xl border border-blue-200/80 transition-colors shrink-0 flex items-center gap-1.5 shadow-xs">
+            <span>LinkedIn</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- Article Navigation Footer -->
+      <footer class="mt-8 pt-6 border-t border-gray-150 flex flex-col sm:flex-row justify-between items-center gap-4">
         <a href="../index.html" class="text-xs font-bold text-[#0a66c2] hover:text-[#004182] hover:underline flex items-center gap-1.5">
-          &larr; Voltar para o início
+          &larr; Voltar para o Portfólio
         </a>
-        <span class="text-[10px] text-gray-600 font-medium">Thiago Lúcio &bull; Diário Dev</span>
-      </div>
+        <span class="text-xs text-gray-600 font-medium">Thiago Lúcio &bull; Diário Dev</span>
+      </footer>
     </article>
   </main>
 
