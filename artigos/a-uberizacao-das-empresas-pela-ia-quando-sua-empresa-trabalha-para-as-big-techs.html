@@ -45,7 +45,10 @@
     [
   {
     "@context": "https://schema.org",
-    "@type": "TechArticle",
+    "@type": [
+      "BlogPosting",
+      "TechArticle"
+    ],
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://thiagolucio.tech/artigos/a-uberizacao-das-empresas-pela-ia-quando-sua-empresa-trabalha-para-as-big-techs.html"
@@ -97,13 +100,13 @@
         "@type": "ListItem",
         "position": 1,
         "name": "Início",
-        "item": "https://thiagolucio.tech"
+        "item": "https://thiagolucio.tech/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Artigos",
-        "item": "https://thiagolucio.tech/#publicacoes"
+        "item": "https://thiagolucio.tech/artigos.html"
       },
       {
         "@type": "ListItem",
@@ -196,13 +199,27 @@
 
   <!-- Main Article Container -->
   <main class="max-w-3xl mx-auto px-4 py-8">
-    <!-- Breadcrumb for SEO -->
-    <nav aria-label="Breadcrumb" class="mb-5 text-xs text-gray-500 flex items-center gap-1.5 flex-wrap">
-      <a href="../index.html" class="hover:text-[#0a66c2] transition-colors">Início</a>
+    <!-- Breadcrumb for SEO with Microdata & JSON-LD alignment -->
+    <nav aria-label="Breadcrumb" class="mb-5 text-xs text-gray-500 flex items-center gap-1.5 flex-wrap" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="flex items-center gap-1.5">
+        <a href="../index.html" itemprop="item" class="hover:text-[#0a66c2] transition-colors">
+          <span itemprop="name">Início</span>
+        </a>
+        <meta itemprop="position" content="1" />
+      </span>
       <span>/</span>
-      <a href="../index.html#publicacoes" class="hover:text-[#0a66c2] transition-colors">Artigos</a>
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="flex items-center gap-1.5">
+        <a href="../artigos.html" itemprop="item" class="hover:text-[#0a66c2] transition-colors">
+          <span itemprop="name">Artigos</span>
+        </a>
+        <meta itemprop="position" content="2" />
+      </span>
       <span>/</span>
-      <span class="text-gray-700 font-medium truncate max-w-xs sm:max-w-md" aria-current="page">A Uberização das Empresas pela IA: Quando Sua Empresa Trabalha para as Big Techs</span>
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="flex items-center gap-1.5">
+        <span class="text-gray-700 font-medium truncate max-w-xs sm:max-w-md" aria-current="page" itemprop="name">A Uberização das Empresas pela IA: Quando Sua Empresa Trabalha para as Big Techs</span>
+        <link itemprop="item" href="https://thiagolucio.tech/artigos/a-uberizacao-das-empresas-pela-ia-quando-sua-empresa-trabalha-para-as-big-techs.html" />
+        <meta itemprop="position" content="3" />
+      </span>
     </nav>
 
     <article class="bg-white border border-gray-200/90 rounded-2xl p-6 sm:p-8 md:p-10 shadow-sm leading-relaxed" itemscope itemtype="https://schema.org/TechArticle">
