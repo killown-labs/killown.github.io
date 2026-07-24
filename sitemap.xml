@@ -109,6 +109,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thiagolucio.tech/artigos/o-maior-mito-da-inteligencia-artificial-por-que-modelos-maiores-nao-resolvem-tudo.html</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thiagolucio.tech/artigos/por-que-escolhi-rust-para-construir-ferramentas-de-sistemas-linux.html</loc>
     <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
@@ -135,6 +141,12 @@
   <url>
     <loc>https://thiagolucio.tech/artigos/a-inflacao-do-corporatives-por-que-codar-ficou-mais-facil-do-que-conversar-sobre-tecnologia.html</loc>
     <lastmod>2024-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thiagolucio.tech/artigos/the-greatest-myth-of-artificial-intelligence-why-bigger-models-dont-solve-everything.html</loc>
+    <lastmod>2026-07-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

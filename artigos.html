@@ -65,6 +65,20 @@
       {
         "@type": "BlogPosting",
         "position": 1,
+        "headline": "O Maior Mito da Inteligência Artificial: Por Que Modelos Maiores Não Resolvem Tudo",
+        "description": "A ideia de que basta aumentar modelos, adicionar mais dados e investir mais poder computacional para alcançar uma inteligência comparável à humana parece cada vez menos convincente.",
+        "url": "https://thiagolucio.tech/artigos/o-maior-mito-da-inteligencia-artificial-por-que-modelos-maiores-nao-resolvem-tudo.html",
+        "datePublished": "2026-07-20",
+        "inLanguage": "pt-BR",
+        "author": {
+          "@type": "Person",
+          "@id": "https://thiagolucio.tech/#person",
+          "name": "Thiago Lucio"
+        }
+      },
+      {
+        "@type": "BlogPosting",
+        "position": 2,
         "headline": "Por que escolhi Rust para construir ferramentas de sistemas Linux",
         "description": "Minha experiência desenvolvendo o Flux, um gerenciador de arquivos rápido com GTK4, e os benefícios da segurança de memória e concorrência garantidas pelo compilador Rust.",
         "url": "https://thiagolucio.tech/artigos/por-que-escolhi-rust-para-construir-ferramentas-de-sistemas-linux.html",
@@ -78,7 +92,7 @@
       },
       {
         "@type": "BlogPosting",
-        "position": 2,
+        "position": 3,
         "headline": "Automatizando pipelines corporativos usando Python Asyncio e Quart",
         "description": "Como reduzimos o overhead operacional ao substituir tarefas sequenciais bloqueantes por concorrência nativa no processamento assíncrono de dados.",
         "url": "https://thiagolucio.tech/artigos/automatizando-pipelines-corporativos-usando-python-asyncio-e-quart.html",
@@ -92,7 +106,7 @@
       },
       {
         "@type": "BlogPosting",
-        "position": 3,
+        "position": 4,
         "headline": "PostgreSQL + JSONB: por que muita gente escolhe isso em vez do MongoDB",
         "description": "Quando alguém precisa armazenar documentos JSON, a primeira opção que costuma vir à cabeça é o MongoDB. Mas hoje o PostgreSQL com JSONB resolve isso de forma tão eficiente que não faz sentido adicionar outro banco.",
         "url": "https://thiagolucio.tech/artigos/postgresql-jsonb-por-que-muita-gente-escolhe-isso-em-vez-do-mongodb.html",
@@ -106,7 +120,7 @@
       },
       {
         "@type": "BlogPosting",
-        "position": 4,
+        "position": 5,
         "headline": "A Uberização das Empresas pela IA: Quando Sua Empresa Trabalha para as Big Techs",
         "description": "Muito se fala sobre como a inteligência artificial vai transformar os negócios. Mas existe uma discussão muito menos explorada: a inteligência artificial pode estar uberizando as empresas.",
         "url": "https://thiagolucio.tech/artigos/a-uberizacao-das-empresas-pela-ia-quando-sua-empresa-trabalha-para-as-big-techs.html",
@@ -120,7 +134,7 @@
       },
       {
         "@type": "BlogPosting",
-        "position": 5,
+        "position": 6,
         "headline": "A Inflação do Corporativês: Por que Codar Ficou Mais Fácil do que Conversar sobre Tecnologia",
         "description": "Escrever código continua sendo uma atividade objetiva. Você escreve, executa, testa. Agora tente explicar a mesma solução em uma reunião. Em poucos minutos, a implementação é coberta por um mar de buzzwords...",
         "url": "https://thiagolucio.tech/artigos/a-inflacao-do-corporatives-por-que-codar-ficou-mais-facil-do-que-conversar-sobre-tecnologia.html",
@@ -229,7 +243,7 @@
           </span>
           
           <span class="text-xs font-bold text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
-            5 Artigos Disponíveis
+            6 Artigos Disponíveis
           </span>
         </div>
 
@@ -258,8 +272,12 @@
       <!-- Categories Pills -->
       <div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none text-xs font-semibold" id="category-filters">
         <button class="filter-btn px-3 py-1.5 rounded-lg bg-[#0a66c2] text-white shadow-2xs cursor-pointer transition-all" data-cat="all">
-          Todos (5)
+          Todos (6)
         </button>
+        
+          <button class="filter-btn px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer transition-all" data-cat="ia / estratégia">
+            IA / Estratégia
+          </button>
         
           <button class="filter-btn px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer transition-all" data-cat="rust / systems">
             Rust / Systems
@@ -273,10 +291,6 @@
             PostgreSQL / Database
           </button>
         
-          <button class="filter-btn px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer transition-all" data-cat="ia / estratégia">
-            IA / Estratégia
-          </button>
-        
           <button class="filter-btn px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer transition-all" data-cat="carreira / engenharia">
             Carreira / Engenharia
           </button>
@@ -287,6 +301,40 @@
     <!-- Articles List Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="articles-container">
       
+      <article class="article-item bg-white border border-gray-200/90 rounded-2xl p-6 sm:p-7 shadow-xs hover:shadow-md transition-all duration-200 flex flex-col justify-between group" data-category="ia / estratégia" data-title="o maior mito da inteligência artificial: por que modelos maiores não resolvem tudo" data-excerpt="a ideia de que basta aumentar modelos, adicionar mais dados e investir mais poder computacional para alcançar uma inteligência comparável à humana parece cada vez menos convincente.">
+        <div>
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <span class="text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-blue-50 text-[#0a66c2] border border-blue-100 uppercase tracking-wider">IA / Estratégia</span>
+            <div class="flex items-center gap-2 text-xs text-gray-600 font-medium">
+              <span>24 de Julho, 2026</span>
+              <span>&bull;</span>
+              <span>6 min de leitura</span>
+            </div>
+          </div>
+
+          <h2 class="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-[#0a66c2] transition-colors mb-2.5 leading-snug">
+            <a href="artigos/o-maior-mito-da-inteligencia-artificial-por-que-modelos-maiores-nao-resolvem-tudo.html" class="hover:underline">
+              O Maior Mito da Inteligência Artificial: Por Que Modelos Maiores Não Resolvem Tudo
+            </a>
+          </h2>
+
+          <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4 line-clamp-3 font-normal">
+            A ideia de que basta aumentar modelos, adicionar mais dados e investir mais poder computacional para alcançar uma inteligência comparável à humana parece cada vez menos convincente.
+          </p>
+        </div>
+
+        <div>
+          <div class="flex flex-wrap gap-1.5 mb-5">
+            <span class="text-[10px] px-2 py-0.5 rounded bg-gray-100 text-gray-600 font-medium">#IA / Estratégia</span>
+          </div>
+
+          <a href="artigos/o-maior-mito-da-inteligencia-artificial-por-que-modelos-maiores-nao-resolvem-tudo.html" class="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#0a66c2] hover:text-[#004182] hover:translate-x-1 transition-all">
+            <span>Ler artigo completo</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+      </article>
+    
       <article class="article-item bg-white border border-gray-200/90 rounded-2xl p-6 sm:p-7 shadow-xs hover:shadow-md transition-all duration-200 flex flex-col justify-between group" data-category="rust / systems" data-title="por que escolhi rust para construir ferramentas de sistemas linux" data-excerpt="minha experiência desenvolvendo o flux, um gerenciador de arquivos rápido com gtk4, e os benefícios da segurança de memória e concorrência garantidas pelo compilador rust.">
         <div>
           <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
