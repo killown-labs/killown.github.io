@@ -115,6 +115,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thiagolucio.tech/artigos/voce-nao-precisa-aprender-mil-ferramentas.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thiagolucio.tech/artigos/o-maior-mito-da-inteligencia-artificial-por-que-modelos-maiores-nao-resolvem-tudo.html</loc>
     <lastmod>2026-07-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -147,6 +153,12 @@
   <url>
     <loc>https://thiagolucio.tech/artigos/a-inflacao-do-corporatives-por-que-codar-ficou-mais-facil-do-que-conversar-sobre-tecnologia.html</loc>
     <lastmod>2024-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thiagolucio.tech/artigos/you-dont-need-to-learn-a-thousand-tools.html</loc>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
