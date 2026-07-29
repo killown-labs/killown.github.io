@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Custom Branded Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a66c2'/%3E%3Ctext x='16' y='21' font-family='system-ui, -apple-system, sans-serif' font-size='14' font-weight='900' fill='%23ffffff' text-anchor='middle'%3ETL%3C/text%3E%3C/svg%3E">
+  
+  <!-- Extreme SEO Core Tags -->
+  <title>Semantic RAG vs Quantitative RAG: The Difference That Prevents Flawed Architecture | Thiago Lucio - Diário Dev</title>
+  <meta name="description" content="RAG has become an umbrella term, but not all information is retrieved the same way. Understand the crucial distinction between Semantic RAG (embeddings) and Quantitative RAG (structured data and SQL) to avoid costly architectural mistakes.">
+  <meta name="keywords" content="Software Development, Portfolio, Thiago Lucio, Web Development, Systems Programming">
+  <meta name="author" content="Thiago Lucio">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  
+  <!-- Canonical & Multilingual Alternative Mappings -->
+  <link rel="canonical" href="https://thiagolucio.tech/artigos/semantic-rag-vs-quantitative-rag-the-difference-that-prevents-flawed-architecture.html">
+  <link rel="alternate" hreflang="en" href="https://thiagolucio.tech/artigos/semantic-rag-vs-quantitative-rag-the-difference-that-prevents-flawed-architecture.html">
+  <link rel="alternate" hreflang="pt-BR" href="https://thiagolucio.tech/artigos/rag-semantico-vs-rag-quantitativo-a-diferenca-que-evita-muita-arquitetura-errada.html">
+  <link rel="alternate" hreflang="x-default" href="https://thiagolucio.tech/artigos/semantic-rag-vs-quantitative-rag-the-difference-that-prevents-flawed-architecture.html">
+
+  <!-- Open Graph Protocol (OG) for Premium Social Media Snippets -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Semantic RAG vs Quantitative RAG: The Difference That Prevents Flawed Architecture | Thiago Lucio - Diário Dev">
+  <meta property="og:description" content="RAG has become an umbrella term, but not all information is retrieved the same way. Understand the crucial distinction between Semantic RAG (embeddings) and Quantitative RAG (structured data and SQL) to avoid costly architectural mistakes.">
+  <meta property="og:url" content="https://thiagolucio.tech/artigos/semantic-rag-vs-quantitative-rag-the-difference-that-prevents-flawed-architecture.html">
+  <meta property="og:site_name" content="Thiago Lucio - Programação, TI &amp; Inteligência Artificial">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:image:alt" content="Visual banner code abstract for Thiago Lucio's publication">
+  <meta property="article:published_time" content="2026-07-23">
+  <meta property="article:author" content="https://thiagolucio.tech">
+  <meta property="article:section" content="AI / Architecture">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Semantic RAG vs Quantitative RAG: The Difference That Prevents Flawed Architecture | Thiago Lucio">
+  <meta name="twitter:description" content="RAG has become an umbrella term, but not all information is retrieved the same way. Understand the crucial distinction between Semantic RAG (embeddings) and Quantitative RAG (structured data and SQL) to avoid costly architectural mistakes.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Structured Data JSON-LD Schema -->
+  <script type="application/ld+json">
+    [
+  {
+    "@context": "https://schema.org",
+    "@type": [
+      "BlogPosting",
+      "TechArticle"
+    ],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://thiagolucio.tech/artigos/semantic-rag-vs-quantitative-rag-the-difference-that-prevents-flawed-architecture.html"
+    },
+    "headline": "Semantic RAG vs Quantitative RAG: The Difference That Prevents Flawed Architecture",
+    "description": "RAG has become an umbrella term, but not all information is retrieved the same way. Understand the crucial distinction between Semantic RAG (embeddings) and Quantitative RAG (structured data and SQL) to avoid costly architectural mistakes.",
+    "image": "https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=1200&q=80",
+    "datePublished": "2026-07-23",
+    "dateModified": "2026-07-23",
+    "wordCount": 816,
+    "author": {
+      "@type": "Person",
+      "@id": "https://thiagolucio.tech/#person",
+      "name": "Thiago Lucio",
+      "alternateName": [
+        "killown",
+        "thiagolucio"
+      ],
+      "url": "https://thiagolucio.tech",
+      "jobTitle": "Desenvolvedor Backend Python & Engenheiro de Sistemas",
+      "sameAs": [
+        "https://www.linkedin.com/in/thiago-lucio-matrix/",
+        "https://github.com/killown",
+        "https://leetcode.com/u/thiagolucio83/",
+        "https://www.hackerrank.com/profile/thiago_dev_lucio",
+        "https://hub.docker.com/u/killown",
+        "https://stackoverflow.com/users/371426/killown",
+        "https://pypi.org/user/killown/",
+        "https://crates.io/users/killown",
+        "https://gitlab.com/killown",
+        "https://killown.blogspot.com/"
+      ]
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Thiago Lucio",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://thiagolucio.tech/favicon.svg"
+      }
+    },
+    "keywords": "Software Development, Portfolio, Thiago Lucio, Web Development, Systems Programming"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://thiagolucio.tech/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Articles",
+        "item": "https://thiagolucio.tech/articles.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Semantic RAG vs Quantitative RAG: The Difference That Prevents Flawed Architecture",
+        "item": "https://thiagolucio.tech/artigos/semantic-rag-vs-quantitative-rag-the-difference-that-prevents-flawed-architecture.html"
+      }
+    ]
+  }
+]
+  </script>
+
+  <!-- Speed Optimizations: DNS Prefetch & Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
+  <!-- Critical Resource Preloading -->
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" as="style">
+
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Critical Path Inline CSS for Immediate Painting (Instant FCP & LCP) */
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #f3f2ef;
+      color: #191919;
+      margin: 0;
+      opacity: 1;
+    }
+    header, footer, main, section, article {
+      display: block;
+    }
+    header {
+      background-color: #ffffff;
+      border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+    }
+    article {
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 1rem;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+  </style>
+</head>
+<body class="min-h-screen pb-16">
+
+  <!-- Static Navbar -->
+  <header class="sticky top-0 bg-white border-b border-gray-200/80 z-40 shadow-sm">
+    <div class="max-w-4xl mx-auto px-4 h-14 flex items-center justify-between">
+      <a href="../articles.html" class="flex items-center gap-1.5 text-xs font-bold text-gray-700 hover:text-[#0a66c2] transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Back to Articles</span>
+      </a>
+      
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-lg bg-[#0a66c2] flex items-center justify-center text-white font-extrabold text-sm tracking-tight">TL</div>
+        <span class="font-bold text-sm tracking-tight text-[#191919] hidden sm:inline">Thiago Lúcio</span>
+      </div>
+
+      <!-- Language Toggle (Navigates to opposite lang version of this article) -->
+      <a 
+        href="rag-semantico-vs-rag-quantitativo-a-diferenca-que-evita-muita-arquitetura-errada.html"
+        class="flex items-center gap-1 px-2.5 py-1 rounded-md border border-gray-200 text-xs font-bold hover:bg-gray-50 text-gray-700 transition-colors shadow-sm cursor-pointer"
+        title="Mudar para Português"
+      >
+        <svg class="w-3.5 h-3.5 text-[#0a66c2]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        <span>PT</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Article Container -->
+  <main class="max-w-3xl mx-auto px-4 py-8">
+    <!-- Breadcrumb for SEO with Microdata & JSON-LD alignment -->
+    <nav aria-label="Breadcrumb" class="mb-5 text-xs text-gray-500 flex items-center gap-1.5 flex-wrap" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="flex items-center gap-1.5">
+        <a href="../index.html" itemprop="item" class="hover:text-[#0a66c2] transition-colors">
+          <span itemprop="name">Home</span>
+        </a>
+        <meta itemprop="position" content="1" />
+      </span>
+      <span>/</span>
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="flex items-center gap-1.5">
+        <a href="../articles.html" itemprop="item" class="hover:text-[#0a66c2] transition-colors">
+          <span itemprop="name">Articles</span>
+        </a>
+        <meta itemprop="position" content="2" />
+      </span>
+      <span>/</span>
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="flex items-center gap-1.5">
+        <span class="text-gray-700 font-medium truncate max-w-xs sm:max-w-md" aria-current="page" itemprop="name">Semantic RAG vs Quantitative RAG: The Difference That Prevents Flawed Architecture</span>
+        <link itemprop="item" href="https://thiagolucio.tech/artigos/semantic-rag-vs-quantitative-rag-the-difference-that-prevents-flawed-architecture.html" />
+        <meta itemprop="position" content="3" />
+      </span>
+    </nav>
+
+    <article class="bg-white border border-gray-200/90 rounded-2xl p-6 sm:p-8 md:p-10 shadow-sm leading-relaxed" itemscope itemtype="https://schema.org/TechArticle">
+      <!-- Article Header Meta -->
+      <header class="mb-8">
+        <div class="flex flex-wrap items-center gap-2.5 mb-4">
+          <span class="text-[11px] font-extrabold px-3 py-1 rounded-full bg-blue-50 text-[#0a66c2] border border-blue-100 uppercase tracking-wider">AI / Architecture</span>
+          <span class="text-xs text-gray-600 font-medium flex items-center gap-1">
+            <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            <time datetime="2026-07-23">July 29, 2026</time>
+          </span>
+          <span class="text-gray-300">&bull;</span>
+          <span class="text-xs text-gray-600 font-medium flex items-center gap-1">
+            <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            5 min read
+          </span>
+        </div>
+        
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-950 tracking-tight mb-5 leading-snug sm:leading-tight" itemprop="headline">Semantic RAG vs Quantitative RAG: The Difference That Prevents Flawed Architecture</h1>
+        
+        <!-- Key Summary Excerpt Callout -->
+        <div class="p-4 sm:p-5 rounded-xl bg-gradient-to-r from-blue-50/60 to-gray-50 border-l-4 border-[#0a66c2] text-sm sm:text-base text-gray-800 font-medium leading-relaxed shadow-xs">
+          RAG has become an umbrella term, but not all information is retrieved the same way. Understand the crucial distinction between Semantic RAG (embeddings) and Quantitative RAG (structured data and SQL) to avoid costly architectural mistakes.
+        </div>
+
+        <!-- Share Buttons Bar (Top) -->
+        
+  <div class="py-4 border-y border-gray-150 my-6 bg-gray-50/50 rounded-xl px-4 sm:px-5">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-[#0a66c2]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+        <span class="text-xs font-extrabold text-gray-900 uppercase tracking-wider">
+          Share this article:
+        </span>
+      </div>
+
+      <div class="flex items-center flex-wrap gap-2">
+        <!-- WhatsApp -->
+        <a href="https://api.whatsapp.com/send?text=Semantic%20RAG%20vs%20Quantitative%20RAG%3A%20The%20Difference%20That%20Prevents%20Flawed%20Architecture%20%7C%20Thiago%20L%C3%BAcio%20https%3A%2F%2Fthiagolucio.tech%2Fartigos%2Fsemantic-rag-vs-quantitative-rag-the-difference-that-prevents-flawed-architecture.html" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200/80 text-xs font-bold transition-all hover:scale-105 shadow-2xs" title="Share on WhatsApp">
+          <svg class="w-4 h-4 fill-current text-emerald-600" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.99c-.002 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <span class="hidden xs:inline">WhatsApp</span>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fthiagolucio.tech%2Fartigos%2Fsemantic-rag-vs-quantitative-rag-the-difference-that-prevents-flawed-architecture.html" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-50 hover:bg-sky-100 text-[#0a66c2] border border-sky-200/80 text-xs font-bold transition-all hover:scale-105 shadow-2xs" title="Share on LinkedIn">
+          <svg class="w-4 h-4 fill-current text-[#0a66c2]" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.72a1.48 1.48 0 1 0 0 2.96 1.48 1.48 0 0 0 0-2.96Z"/></svg>
+          <span class="hidden xs:inline">LinkedIn</span>
+        </a>
+
+        <!-- X / Twitter -->
+        <a href="https://twitter.com/intent/tweet?text=Semantic%20RAG%20vs%20Quantitative%20RAG%3A%20The%20Difference%20That%20Prevents%20Flawed%20Architecture%20%7C%20Thiago%20L%C3%BAcio&url=https%3A%2F%2Fthiagolucio.tech%2Fartigos%2Fsemantic-rag-vs-quantitative-rag-the-difference-that-prevents-flawed-architecture.html" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-900 border border-gray-300 text-xs font-bold transition-all hover:scale-105 shadow-2xs" title="Share on X (Twitter)">
+          <svg class="w-3.5 h-3.5 fill-current text-black" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          <span class="hidden xs:inline">X</span>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fthiagolucio.tech%2Fartigos%2Fsemantic-rag-vs-quantitative-rag-the-difference-that-prevents-flawed-architecture.html" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-200/80 text-xs font-bold transition-all hover:scale-105 shadow-2xs" title="Share on Facebook">
+          <svg class="w-4 h-4 fill-current text-[#1877F2]" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <span class="hidden sm:inline">Facebook</span>
+        </a>
+
+        <!-- Telegram -->
+        <a href="https://t.me/share/url?url=https%3A%2F%2Fthiagolucio.tech%2Fartigos%2Fsemantic-rag-vs-quantitative-rag-the-difference-that-prevents-flawed-architecture.html&text=Semantic%20RAG%20vs%20Quantitative%20RAG%3A%20The%20Difference%20That%20Prevents%20Flawed%20Architecture%20%7C%20Thiago%20L%C3%BAcio" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-50 hover:bg-sky-100 text-sky-700 border border-sky-200/80 text-xs font-bold transition-all hover:scale-105 shadow-2xs" title="Share on Telegram">
+          <svg class="w-3.5 h-3.5 fill-current text-[#229ED9]" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+          <span class="hidden md:inline">Telegram</span>
+        </a>
+
+        <!-- Reddit -->
+        <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fthiagolucio.tech%2Fartigos%2Fsemantic-rag-vs-quantitative-rag-the-difference-that-prevents-flawed-architecture.html&title=Semantic%20RAG%20vs%20Quantitative%20RAG%3A%20The%20Difference%20That%20Prevents%20Flawed%20Architecture%20%7C%20Thiago%20L%C3%BAcio" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-700 border border-orange-200/80 text-xs font-bold transition-all hover:scale-105 shadow-2xs" title="Share on Reddit">
+          <svg class="w-4 h-4 fill-current text-[#FF4500]" viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.562-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.688-.562-1.249-1.25-1.249zm-4.566 3.868a.324.324 0 0 0-.041.457c.596.697 1.492.97 2.357.97.865 0 1.761-.273 2.357-.97a.325.325 0 0 0-.041-.457.325.325 0 0 0-.457.041c-.428.502-1.11.721-1.859.721-.75 0-1.431-.219-1.859-.721a.324.324 0 0 0-.457-.041z"/></svg>
+          <span class="hidden lg:inline">Reddit</span>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:?subject=Semantic%20RAG%20vs%20Quantitative%20RAG%3A%20The%20Difference%20That%20Prevents%20Flawed%20Architecture%20%7C%20Thiago%20L%C3%BAcio&body=Semantic%20RAG%20vs%20Quantitative%20RAG%3A%20The%20Difference%20That%20Prevents%20Flawed%20Architecture%0A%0ARAG%20has%20become%20an%20umbrella%20term%2C%20but%20not%20all%20information%20is%20retrieved%20the%20same%20way.%20Understand%20the%20crucial%20distinction%20between%20Semantic%20RAG%20(embeddings)%20and%20Quantitative%20RAG%20(structured%20data%20and%20SQL)%20to%20avoid%20costly%20architectural%20mistakes.%0A%0Ahttps%3A%2F%2Fthiagolucio.tech%2Fartigos%2Fsemantic-rag-vs-quantitative-rag-the-difference-that-prevents-flawed-architecture.html" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200/80 text-xs font-bold transition-all hover:scale-105 shadow-2xs" title="Share via Email">
+          <svg class="w-3.5 h-3.5 fill-none stroke-current text-rose-600" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <span class="hidden lg:inline">E-mail</span>
+        </a>
+
+        <!-- Copy Link Button -->
+        <button onclick="navigator.clipboard.writeText('https://thiagolucio.tech/artigos/semantic-rag-vs-quantitative-rag-the-difference-that-prevents-flawed-architecture.html'); this.querySelector('span').innerText='Copied!'; setTimeout(() => this.querySelector('span').innerText='Copy Link', 2500);" class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border bg-white border-gray-300 hover:bg-gray-50 text-gray-800 text-xs font-bold transition-all hover:scale-105 cursor-pointer shadow-2xs" title="Copy article link">
+          <svg class="w-3.5 h-3.5 fill-none stroke-current text-gray-600" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+          <span>Copy Link</span>
+        </button>
+      </div>
+    </div>
+  </div>
+      </header>
+      
+      <!-- Article Content Body -->
+      <div class="article-body space-y-4 text-gray-800" itemprop="articleBody">
+        <div class="my-8 overflow-x-auto rounded-2xl border border-slate-200 shadow-sm bg-white dark:bg-slate-900 dark:border-slate-800 p-2 sm:p-4">
+<table class="w-full text-left text-xs sm:text-sm border-collapse">
+<thead>
+<tr class="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50">
+<th class="p-3 sm:p-4 font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider w-1/4">Dimension</th>
+<th class="p-3 sm:p-4 font-bold text-sky-600 dark:text-sky-400 w-3/8">
+<div class="flex items-center gap-2">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-sky-500"></span>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Semantic RAG</p>
+</div>
+</th>
+<th class="p-3 sm:p-4 font-bold text-emerald-600 dark:text-emerald-400 w-3/8">
+<div class="flex items-center gap-2">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Quantitative RAG</p>
+</div>
+</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800/60 text-slate-700 dark:text-slate-300">
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="p-3 sm:p-4 font-semibold text-slate-900 dark:text-white bg-slate-50/30 dark:bg-slate-800/20">Primary Focus</td>
+<td class="p-3 sm:p-4">Meaning, concepts, and discursively rich context</td>
+<td class="p-3 sm:p-4 font-medium">Numerical metrics, figures, and exact values</td>
+</tr>
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="p-3 sm:p-4 font-semibold text-slate-900 dark:text-white bg-slate-50/30 dark:bg-slate-800/20">Retrieval Method</td>
+<td class="p-3 sm:p-4"><code class="px-2 py-0.5 rounded bg-sky-50 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300 font-mono text-xs">Embeddings / Vectors</code> (Similarity)</td>
+<td class="p-3 sm:p-4"><code class="px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 font-mono text-xs">SQL / Aggregations</code> (Exact match)</td>
+</tr>
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="p-3 sm:p-4 font-semibold text-slate-900 dark:text-white bg-slate-50/30 dark:bg-slate-800/20">Data Source</td>
+<td class="p-3 sm:p-4">Unstructured text (PDFs, FAQs, manuals, docs)</td>
+<td class="p-3 sm:p-4">Structured data (SQL Tables, CSVs, DW, Data Lakes)</td>
+</tr>
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="p-3 sm:p-4 font-semibold text-slate-900 dark:text-white bg-slate-50/30 dark:bg-slate-800/20">Sample Query</td>
+<td class="p-3 sm:p-4 italic text-slate-600 dark:text-slate-400">"Why do customers tend to cancel subscriptions?"</td>
+<td class="p-3 sm:p-4 italic text-slate-600 dark:text-slate-400">"What was total revenue in May?"</td>
+</tr>
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="p-3 sm:p-4 font-semibold text-slate-900 dark:text-white bg-slate-50/30 dark:bg-slate-800/20">Response Type</td>
+<td class="p-3 sm:p-4">Explanatory, synthesized, and contextual</td>
+<td class="p-3 sm:p-4">Objective, precise, tabular, or statistical</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">RAG has become a catch-all term. Today, any system that queries a source before responding gets labeled as Retrieval-Augmented Generation, even when the underlying retrieval mechanisms are completely different.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">This obscures a vital distinction. Not all information is stored the same way, so no single retrieval mechanism fits every use case.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">If your knowledge base consists of documents, manuals, contracts, articles, technical docs, or any natural language text, the goal is locating snippets relevant to the user's question. Words might differ, but the underlying meaning remains the same.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Imagine someone asking:</p>
+<em class="italic text-gray-800">"Why do customers cancel their subscription?"</em>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Inside a document, the only relevant line might be:</p>
+<em class="italic text-gray-800">"A large portion of users drop off during the sign-up flow."</em>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">The two sentences share almost no key words. Yet they address the exact same topic. Traditional keyword search would struggle to connect them.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">This is precisely where <strong class="font-bold text-gray-950">Semantic RAG</strong> shines.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">In this model, documents are converted into embeddings — numerical representations preserving semantic relationships. When a query arrives, it is also converted into a vector. The system retrieves the closest semantic matches and passes that context to the language model to generate the answer.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">This approach works exceptionally well for unstructured text:</p>
+<ul class="list-disc pl-6 space-y-2.5 my-5 text-sm md:text-base text-gray-700 font-normal">
+<li class="pl-1 leading-relaxed">Internal documentation.</li>
+<li class="pl-1 leading-relaxed">Company policies.</li>
+<li class="pl-1 leading-relaxed">Technical articles.</li>
+<li class="pl-1 leading-relaxed">Contracts.</li>
+<li class="pl-1 leading-relaxed">FAQs.</li>
+<li class="pl-1 leading-relaxed">Knowledge bases.</li>
+</ul>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">All of these yield great results with semantic retrieval.</p>
+<hr class="my-8 border-gray-200" />
+<h2 class="text-lg md:text-xl font-extrabold text-gray-950 mt-10 mb-4 leading-tight border-l-4 border-[#0a66c2] pl-3.5 bg-blue-50/40 py-1.5 rounded-r-lg">The Opposite Scenario: Exact & Numerical Data</h2>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Now consider a different scenario.</p>
+<em class="italic text-gray-800">"What was May's total revenue?"</em>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Or:</p>
+<em class="italic text-gray-800">"How many orders were delivered yesterday?"</em>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">There is no context to interpret.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">There is no hidden meaning between documents.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">There is a specific number stored in a database.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Using embeddings here adds unnecessary complexity without any benefit. The data is already organized in tables, indexes, and relationships. You simply query it.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">This scenario is known as <strong class="font-bold text-gray-950">Quantitative RAG</strong>.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Retrieval operates over structured data. Instead of computing vector similarity, the system executes queries, applies filters, aggregates results, and returns exact records. The language model then formats or explains the result, but the database itself found the data.</p>
+<hr class="my-8 border-gray-200" />
+<h2 class="text-lg md:text-xl font-extrabold text-gray-950 mt-10 mb-4 leading-tight border-l-4 border-[#0a66c2] pl-3.5 bg-blue-50/40 py-1.5 rounded-r-lg">Two Tools for Different Problems</h2>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">The difference may seem minor on a diagram, but in practice, it changes system architecture entirely.</p>
+<ul class="list-disc pl-6 space-y-2.5 my-5 text-sm md:text-base text-gray-700 font-normal">
+<li class="pl-1 leading-relaxed">A vector database does not replace a relational database.</li>
+<li class="pl-1 leading-relaxed">A relational database does not replace semantic search.</li>
+</ul>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Each solves a distinct problem.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">The most common mistake is assuming embeddings represent the natural evolution of all search engines. They do not.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">If a user asks for their bank account balance, the system must return an exact figure. There is zero tolerance for "similar documents."</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Likewise, searching for an internal remote-work policy using pure SQL queries will yield poor results. Databases retrieve records; understanding topics is a different domain.</p>
+<hr class="my-8 border-gray-200" />
+<h2 class="text-lg md:text-xl font-extrabold text-gray-950 mt-10 mb-4 leading-tight border-l-4 border-[#0a66c2] pl-3.5 bg-blue-50/40 py-1.5 rounded-r-lg">The Power of Hybrid RAG</h2>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Most modern enterprise applications combine both models.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">A query like:</p>
+<em class="italic text-gray-800">"Why did sales drop in May?"</em>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">might first require a database query to confirm whether a drop actually occurred. Following that, meeting minutes, support tickets, satisfaction surveys, emails, or customer feedback are searched semantically to explain the reason.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">The numbers come from the relational database.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">The context comes from semantic retrieval.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">When these two approaches work together, the model delivers both precision and context simultaneously.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Ultimately, the choice rarely depends on the framework, vector database, or LLM used.</p>
+<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">It depends on the nature of the information being retrieved.</p>
+      </div>
+
+      <!-- Share Buttons Bar (Bottom) -->
+      
+  <div class="py-4 border-y border-gray-150 my-6 bg-gray-50/50 rounded-xl px-4 sm:px-5">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-[#0a66c2]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+        <span class="text-xs font-extrabold text-gray-900 uppercase tracking-wider">
+          Share this article:
+        </span>
+      </div>
+
+      <div class="flex items-center flex-wrap gap-2">
+        <!-- WhatsApp -->
+        <a href="https://api.whatsapp.com/send?text=Semantic%20RAG%20vs%20Quantitative%20RAG%3A%20The%20Difference%20That%20Prevents%20Flawed%20Architecture%20%7C%20Thiago%20L%C3%BAcio%20https%3A%2F%2Fthiagolucio.tech%2Fartigos%2Fsemantic-rag-vs-quantitative-rag-the-difference-that-prevents-flawed-architecture.html" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200/80 text-xs font-bold transition-all hover:scale-105 shadow-2xs" title="Share on WhatsApp">
+          <svg class="w-4 h-4 fill-current text-emerald-600" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.99c-.002 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <span class="hidden xs:inline">WhatsApp</span>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fthiagolucio.tech%2Fartigos%2Fsemantic-rag-vs-quantitative-rag-the-difference-that-prevents-flawed-architecture.html" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-50 hover:bg-sky-100 text-[#0a66c2] border border-sky-200/80 text-xs font-bold transition-all hover:scale-105 shadow-2xs" title="Share on LinkedIn">
+          <svg class="w-4 h-4 fill-current text-[#0a66c2]" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.72a1.48 1.48 0 1 0 0 2.96 1.48 1.48 0 0 0 0-2.96Z"/></svg>
+          <span class="hidden xs:inline">LinkedIn</span>
+        </a>
+
+        <!-- X / Twitter -->
+        <a href="https://twitter.com/intent/tweet?text=Semantic%20RAG%20vs%20Quantitative%20RAG%3A%20The%20Difference%20That%20Prevents%20Flawed%20Architecture%20%7C%20Thiago%20L%C3%BAcio&url=https%3A%2F%2Fthiagolucio.tech%2Fartigos%2Fsemantic-rag-vs-quantitative-rag-the-difference-that-prevents-flawed-architecture.html" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-900 border border-gray-300 text-xs font-bold transition-all hover:scale-105 shadow-2xs" title="Share on X (Twitter)">
+          <svg class="w-3.5 h-3.5 fill-current text-black" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          <span class="hidden xs:inline">X</span>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fthiagolucio.tech%2Fartigos%2Fsemantic-rag-vs-quantitative-rag-the-difference-that-prevents-flawed-architecture.html" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-200/80 text-xs font-bold transition-all hover:scale-105 shadow-2xs" title="Share on Facebook">
+          <svg class="w-4 h-4 fill-current text-[#1877F2]" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <span class="hidden sm:inline">Facebook</span>
+        </a>
+
+        <!-- Telegram -->
+        <a href="https://t.me/share/url?url=https%3A%2F%2Fthiagolucio.tech%2Fartigos%2Fsemantic-rag-vs-quantitative-rag-the-difference-that-prevents-flawed-architecture.html&text=Semantic%20RAG%20vs%20Quantitative%20RAG%3A%20The%20Difference%20That%20Prevents%20Flawed%20Architecture%20%7C%20Thiago%20L%C3%BAcio" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-50 hover:bg-sky-100 text-sky-700 border border-sky-200/80 text-xs font-bold transition-all hover:scale-105 shadow-2xs" title="Share on Telegram">
+          <svg class="w-3.5 h-3.5 fill-current text-[#229ED9]" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+          <span class="hidden md:inline">Telegram</span>
+        </a>
+
+        <!-- Reddit -->
+        <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fthiagolucio.tech%2Fartigos%2Fsemantic-rag-vs-quantitative-rag-the-difference-that-prevents-flawed-architecture.html&title=Semantic%20RAG%20vs%20Quantitative%20RAG%3A%20The%20Difference%20That%20Prevents%20Flawed%20Architecture%20%7C%20Thiago%20L%C3%BAcio" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-700 border border-orange-200/80 text-xs font-bold transition-all hover:scale-105 shadow-2xs" title="Share on Reddit">
+          <svg class="w-4 h-4 fill-current text-[#FF4500]" viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.562-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.688-.562-1.249-1.25-1.249zm-4.566 3.868a.324.324 0 0 0-.041.457c.596.697 1.492.97 2.357.97.865 0 1.761-.273 2.357-.97a.325.325 0 0 0-.041-.457.325.325 0 0 0-.457.041c-.428.502-1.11.721-1.859.721-.75 0-1.431-.219-1.859-.721a.324.324 0 0 0-.457-.041z"/></svg>
+          <span class="hidden lg:inline">Reddit</span>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:?subject=Semantic%20RAG%20vs%20Quantitative%20RAG%3A%20The%20Difference%20That%20Prevents%20Flawed%20Architecture%20%7C%20Thiago%20L%C3%BAcio&body=Semantic%20RAG%20vs%20Quantitative%20RAG%3A%20The%20Difference%20That%20Prevents%20Flawed%20Architecture%0A%0ARAG%20has%20become%20an%20umbrella%20term%2C%20but%20not%20all%20information%20is%20retrieved%20the%20same%20way.%20Understand%20the%20crucial%20distinction%20between%20Semantic%20RAG%20(embeddings)%20and%20Quantitative%20RAG%20(structured%20data%20and%20SQL)%20to%20avoid%20costly%20architectural%20mistakes.%0A%0Ahttps%3A%2F%2Fthiagolucio.tech%2Fartigos%2Fsemantic-rag-vs-quantitative-rag-the-difference-that-prevents-flawed-architecture.html" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200/80 text-xs font-bold transition-all hover:scale-105 shadow-2xs" title="Share via Email">
+          <svg class="w-3.5 h-3.5 fill-none stroke-current text-rose-600" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <span class="hidden lg:inline">E-mail</span>
+        </a>
+
+        <!-- Copy Link Button -->
+        <button onclick="navigator.clipboard.writeText('https://thiagolucio.tech/artigos/semantic-rag-vs-quantitative-rag-the-difference-that-prevents-flawed-architecture.html'); this.querySelector('span').innerText='Copied!'; setTimeout(() => this.querySelector('span').innerText='Copy Link', 2500);" class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border bg-white border-gray-300 hover:bg-gray-50 text-gray-800 text-xs font-bold transition-all hover:scale-105 cursor-pointer shadow-2xs" title="Copy article link">
+          <svg class="w-3.5 h-3.5 fill-none stroke-current text-gray-600" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+          <span>Copy Link</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+      <!-- Author Bio Section for E-E-A-T SEO -->
+      <section class="mt-12 pt-8 border-t border-gray-150" aria-label="Sobre o Autor">
+        <div class="p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-blue-50/30 border border-gray-150 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <div class="w-14 h-14 rounded-2xl bg-[#0a66c2] text-white flex items-center justify-center font-black text-xl shrink-0 shadow-sm">
+            TL
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2">
+              <h3 class="text-sm font-bold text-gray-950">Thiago Lucio</h3>
+              <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-gray-200/70 text-gray-700">Author & Developer</span>
+            </div>
+            <p class="text-xs text-gray-600 mt-1 leading-relaxed">
+              Software Developer focused on systems architecture, high-performance web development, and tech strategy.
+            </p>
+          </div>
+          <a href="https://www.linkedin.com/in/thiago-lucio-matrix/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-[#0a66c2] hover:bg-blue-100/60 px-3.5 py-2 rounded-xl border border-blue-200/80 transition-colors shrink-0 flex items-center gap-1.5 shadow-xs">
+            <span>LinkedIn</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- Article Navigation Footer -->
+      <footer class="mt-8 pt-6 border-t border-gray-150 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <a href="../index.html" class="text-xs font-bold text-[#0a66c2] hover:text-[#004182] hover:underline flex items-center gap-1.5">
+          &larr; Back to home
+        </a>
+        <span class="text-xs text-gray-600 font-medium">Thiago Lucio &bull; Diário Dev</span>
+      </footer>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-8 text-xs text-gray-600 border-t border-gray-200 bg-white mt-12">
+    <p>© 2026 Desenvolvido por Thiago Lucio.</p>
+  </footer>
+
+</body>
+</html>
