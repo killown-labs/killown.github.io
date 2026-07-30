@@ -127,6 +127,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thiagolucio.tech/artigos/os-vicios-de-linguagem-que-entregam-um-texto-escrito-por-ia.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thiagolucio.tech/artigos/rag-semantico-vs-rag-quantitativo-a-diferenca-que-evita-muita-arquitetura-errada.html</loc>
     <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
@@ -177,6 +183,12 @@
   <url>
     <loc>https://thiagolucio.tech/artigos/a-inflacao-do-corporatives-por-que-codar-ficou-mais-facil-do-que-conversar-sobre-tecnologia.html</loc>
     <lastmod>2024-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thiagolucio.tech/artigos/the-writing-habits-that-give-away-ai-generated-text.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
