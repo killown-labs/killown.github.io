@@ -312,17 +312,17 @@
       <!-- Article Content Body -->
       <div class="article-body space-y-4 text-gray-800" itemprop="articleBody">
         <div class="my-6 p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-indigo-50/80 via-slate-50 to-blue-50/40 dark:from-slate-900 dark:via-slate-900/90 dark:to-indigo-950/30 border border-slate-200 dark:border-slate-800 shadow-sm">
-<div class="flex items-start gap-3">
-<div class="p-2 rounded-xl bg-indigo-600 text-white shrink-0 mt-0.5">
-<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-</div>
-<div>
-<h4 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-1">Understanding Software vs. Generating Code</h4>
-<p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">State bugs and flow control in real applications highlight the gap between someone who understands software and someone who merely generates code.</p>
-</p>
-</div>
-</div>
+  <div class="flex items-start gap-3">
+    <div class="p-2 rounded-xl bg-indigo-600 text-white shrink-0 mt-0.5">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+    </div>
+    <div>
+      <h4 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-1">Understanding Software vs. Generating Code</h4>
+      <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+        State bugs and flow control in real applications highlight the gap between someone who understands software and someone who merely generates code.
+      </p>
+    </div>
+  </div>
 </div>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">AI models have evolved drastically.</p>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Today they write boilerplate, suggest architectures, generate tests, explain APIs, and accelerate a massive amount of work.</p>
@@ -333,44 +333,44 @@
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">The goal was to add full-text searching inside file contents directly in the search engine, rather than searching strictly by filename.</p>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">The implementation was almost ready. There was just one problem: after the <strong class="font-bold text-gray-950">second search</strong>, the application would simply freeze.</p>
 <div class="my-6 p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-900">
-<div class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Handing the Entire Project to AI Models</div>
-<p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 mb-3">
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">I passed the whole codebase to the best AI models I could find: complete code, architecture diagrams, message flow, logs, and context.</p>
-</p>
-<div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center font-mono text-xs font-bold">
-<div class="p-2.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-purple-600 dark:text-purple-400">Claude</div>
-<div class="p-2.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-emerald-600 dark:text-emerald-400">ChatGPT</div>
-<div class="p-2.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-blue-600 dark:text-blue-400">DeepSeek</div>
-<div class="p-2.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-amber-600 dark:text-amber-400">Qwen</div>
-</div>
+  <div class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Handing the Entire Project to AI Models</div>
+  <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 mb-3">
+    I passed the whole codebase to the best AI models I could find: complete code, architecture diagrams, message flow, logs, and context.
+  </p>
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center font-mono text-xs font-bold">
+    <div class="p-2.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-purple-600 dark:text-purple-400">Claude</div>
+    <div class="p-2.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-emerald-600 dark:text-emerald-400">ChatGPT</div>
+    <div class="p-2.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-blue-600 dark:text-blue-400">DeepSeek</div>
+    <div class="p-2.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-amber-600 dark:text-amber-400">Qwen</div>
+  </div>
 </div>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Even when I explained exactly where I suspected the issue was, all of them insisted on the same direction.</p>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Their diagnosis insisted that the root cause was in:</p>
 <div class="my-4 p-3 rounded-lg bg-slate-950 text-indigo-300 font-mono text-xs sm:text-sm border border-slate-800">
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">AppMsg::StartContentSearch(term)</p>
+  AppMsg::StartContentSearch(term)
 </div>
 <div class="my-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
-<div class="p-3.5 rounded-xl border border-rose-200/80 bg-rose-50/40 dark:bg-rose-950/20 dark:border-rose-900/40">
-<span class="text-xs font-mono font-bold text-rose-600 dark:text-rose-400 block mb-1">Diagnosis #1</span>
-<p class="text-xs text-slate-700 dark:text-slate-300">"Maybe it's a synchronization issue."</p>
-</div>
-<div class="p-3.5 rounded-xl border border-rose-200/80 bg-rose-50/40 dark:bg-rose-950/20 dark:border-rose-900/40">
-<span class="text-xs font-mono font-bold text-rose-600 dark:text-rose-400 block mb-1">Diagnosis #2</span>
-<p class="text-xs text-slate-700 dark:text-slate-300">"There could be an execution deadlock between tasks."</p>
-</div>
-<div class="p-3.5 rounded-xl border border-rose-200/80 bg-rose-50/40 dark:bg-rose-950/20 dark:border-rose-900/40">
-<span class="text-xs font-mono font-bold text-rose-600 dark:text-rose-400 block mb-1">Diagnosis #3</span>
-<p class="text-xs text-slate-700 dark:text-slate-300">"Perhaps the event loop is causing an unexpected condition."</p>
-</div>
-<div class="p-3.5 rounded-xl border border-rose-200/80 bg-rose-50/40 dark:bg-rose-950/20 dark:border-rose-900/40">
-<span class="text-xs font-mono font-bold text-rose-600 dark:text-rose-400 block mb-1">Diagnosis #4</span>
-<p class="text-xs text-slate-700 dark:text-slate-300">"It might be thread management."</p>
-</div>
+  <div class="p-3.5 rounded-xl border border-rose-200/80 bg-rose-50/40 dark:bg-rose-950/20 dark:border-rose-900/40">
+    <span class="text-xs font-mono font-bold text-rose-600 dark:text-rose-400 block mb-1">Diagnosis #1</span>
+    <p class="text-xs text-slate-700 dark:text-slate-300">"Maybe it's a synchronization issue."</p>
+  </div>
+  <div class="p-3.5 rounded-xl border border-rose-200/80 bg-rose-50/40 dark:bg-rose-950/20 dark:border-rose-900/40">
+    <span class="text-xs font-mono font-bold text-rose-600 dark:text-rose-400 block mb-1">Diagnosis #2</span>
+    <p class="text-xs text-slate-700 dark:text-slate-300">"There could be an execution deadlock between tasks."</p>
+  </div>
+  <div class="p-3.5 rounded-xl border border-rose-200/80 bg-rose-50/40 dark:bg-rose-950/20 dark:border-rose-900/40">
+    <span class="text-xs font-mono font-bold text-rose-600 dark:text-rose-400 block mb-1">Diagnosis #3</span>
+    <p class="text-xs text-slate-700 dark:text-slate-300">"Perhaps the event loop is causing an unexpected condition."</p>
+  </div>
+  <div class="p-3.5 rounded-xl border border-rose-200/80 bg-rose-50/40 dark:bg-rose-950/20 dark:border-rose-900/40">
+    <span class="text-xs font-mono font-bold text-rose-600 dark:text-rose-400 block mb-1">Diagnosis #4</span>
+    <p class="text-xs text-slate-700 dark:text-slate-300">"It might be thread management."</p>
+  </div>
 </div>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">It all sounded plausible. But the problem <strong class="font-bold text-gray-950">was not there</strong>.</p>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">I kept explaining that the problematic flow was actually a different one:</p>
 <div class="my-4 p-3 rounded-lg bg-slate-950 text-amber-300 font-mono text-xs sm:text-sm border border-slate-800">
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">AppMsg::UpdateFilter(query)</p>
+  AppMsg::UpdateFilter(query)
 </div>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">It was re-entering a path that caused an infinite loop. Even so, their answers kept returning to the exact same hypothesis.</p>
 <hr class="my-8 border-gray-200" />
@@ -379,24 +379,24 @@
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">The cause was simple: when the search opened, a filter update occurred again under a specific condition, and the flow lacked a guard for that case.</p>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">The fix required just a simple state guard:</p>
 <div class="my-6 p-4 rounded-xl bg-slate-950 text-slate-100 font-mono text-xs sm:text-sm border border-slate-800 shadow-lg">
-<div class="flex items-center justify-between pb-2 mb-3 border-b border-slate-800 text-slate-400 text-xs">
-<span>State Flow Guard (Rust)</span>
-<span class="text-emerald-400 font-bold">Simple Guard</span>
-</div>
-<pre><code class="text-emerald-400">if query.is_empty() && self.search_just_opened {
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">self.search_just_opened = false;</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">return;</p>
-<p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">}</code></pre></p>
+  <div class="flex items-center justify-between pb-2 mb-3 border-b border-slate-800 text-slate-400 text-xs">
+    <span>State Flow Guard (Rust)</span>
+    <span class="text-emerald-400 font-bold">Simple Guard</span>
+  </div>
+  <pre><code class="text-emerald-400">if query.is_empty() && self.search_just_opened {
+    self.search_just_opened = false;
+    return;
+}</code></pre>
 </div>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">A state guard. Just that.</p>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Then another bug appeared: when canceling a search, the routine properly cleared the file grid, but forgot to rebuild the UI state. The data was correct, but the screen never received the update event.</p>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">All that was missing was:</p>
 <div class="my-6 p-4 rounded-xl bg-slate-950 text-slate-100 font-mono text-xs sm:text-sm border border-slate-800 shadow-lg">
-<div class="flex items-center justify-between pb-2 mb-3 border-b border-slate-800 text-slate-400 text-xs">
-<span>UI Update (Rust)</span>
-<span class="text-emerald-400 font-bold">UI Refresh</span>
-</div>
-<pre><code class="text-emerald-400">sender.input(AppMsg::Refresh);</code></pre>
+  <div class="flex items-center justify-between pb-2 mb-3 border-b border-slate-800 text-slate-400 text-xs">
+    <span>UI Update (Rust)</span>
+    <span class="text-emerald-400 font-bold">UI Refresh</span>
+  </div>
+  <pre><code class="text-emerald-400">sender.input(AppMsg::Refresh);</code></pre>
 </div>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Two small fixes. Two issues that completely halted the project.</p>
 <hr class="my-8 border-gray-200" />
@@ -405,19 +405,19 @@
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Generating code with AI is extremely powerful. I can develop much faster using these tools.</p>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">However, there is a huge difference between <strong class="font-bold text-gray-950">generating code</strong> and <strong class="font-bold text-gray-950">understanding software</strong>.</p>
 <div class="my-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
-<div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
-<strong class="text-slate-900 dark:text-white block mb-1">Generating Code with AI</strong>
-<p class="text-slate-600 dark:text-slate-400">Rapidly creates pattern-matched solutions, but lacks the deep understanding of intent or event chains in a live application.</p>
-</div>
-<div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
-<strong class="text-slate-900 dark:text-white block mb-1">Understanding Software</strong>
-<p class="text-slate-600 dark:text-slate-400">Knowing precisely how state, events, concurrency, and data flow behave when things deviate from the expected path.</p>
-</div>
+  <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
+    <strong class="text-slate-900 dark:text-white block mb-1">Generating Code with AI</strong>
+    <p class="text-slate-600 dark:text-slate-400">Rapidly creates pattern-matched solutions, but lacks the deep understanding of intent or event chains in a live application.</p>
+  </div>
+  <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
+    <strong class="text-slate-900 dark:text-white block mb-1">Understanding Software</strong>
+    <p class="text-slate-600 dark:text-slate-400">Knowing precisely how state, events, concurrency, and data flow behave when things deviate from the expected path.</p>
+  </div>
 </div>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">When you don't know how an application works internally, a bug like this can completely stall your project. AI can generate a solution, but someone still needs to know when that solution actually makes sense.</p>
 <p class="text-sm md:text-base text-[#374151] leading-relaxed mb-4 font-normal">Because in the end, it wasn't a complex architecture or a mysterious failure. It was a state entering the wrong flow, and a UI update that never happened.</p>
 <blockquote class="my-6 p-4 border-l-4 border-indigo-500 bg-indigo-50/50 dark:bg-indigo-950/20 text-slate-800 dark:text-slate-200 text-xs sm:text-sm italic font-medium rounded-r-xl">
-<p class="text-sm md:text-base text-gray-900 leading-relaxed mb-4 font-semibold">"AI is a multiplier. But it primarily multiplies the capability of those who already know how to navigate code."</p>
+  "AI is a multiplier. But it primarily multiplies the capability of those who already know how to navigate code."
 </blockquote>
       </div>
 
